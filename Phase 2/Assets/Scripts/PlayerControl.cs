@@ -4,47 +4,52 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public bool jump = false;
-    public float moveForce = 365f;
-    public float maxSpeed = 5f;
-    public float jumpForce = 1000f;
-    public Transform groundCheck;
+    public int speed = 10;
+    private bool facingRight = false;
+    public int jump = 2000;
+    private float moveX;
 
-    private bool grounded = false;
     private Rigidbody2D _playerRB;
 
-    void Awake()
+    private void Awake() 
     {
         _playerRB = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            jump = true;
-        }
+        Move();
     }
 
-    void FixedUpdate()
+    void Move()
     {
-        float h = Input.GetAxis("Horizontal");
-
-        if(h * _playerRB.velocity.x < maxSpeed)
+        moveX = Input.GetAxis("Horizontal");
+        if (Input.GetButtonDown("Submit"))
         {
-            _playerRB.AddForce(Vector2.right * h * moveForce);
+            Jump();
         }
 
-        if (Mathf.Abs (_playerRB.velocity.x) > maxSpeed)
+        if (moveX < 0f && facingRight == false)
         {
-            _playerRB.velocity = new Vector2(Mathf.Sign (_playerRB.velocity.x) * maxSpeed, _playerRB.velocity.y);
+            FlipPlayer();
+        } else if (moveX > 0f && facingRight == true) 
+        {
+            FlipPlayer();
         }
 
-        if (jump)
-        {
-            _playerRB.AddForce(new Vector2(0f, jumpForce));
-            jump = false;
-        }
+        _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
+    }
+
+    void Jump()
+    {
+        _playerRB.AddForce(Vector2.up * jump);   
+    }
+
+    void FlipPlayer()
+    {
+        facingRight = !facingRight;
+        Vector2 localScale  = gameObject.transform.localScale;
+        localScale.x *= -1;
+        transform.localScale = localScale;
     }
 }
