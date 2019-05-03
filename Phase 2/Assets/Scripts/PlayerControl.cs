@@ -9,15 +9,9 @@ public class PlayerControl : MonoBehaviour
     public int jump = 2000;
     private float moveX;
 
-    private TimeTravel _time;
-
     private Rigidbody2D _playerRB;
 
-    private void Start() 
-    {
-    
-    }
-
+    // Retrieves the players rigidbody so that we can move it.
     private void Awake() 
     {
         _playerRB = GetComponent<Rigidbody2D>();
@@ -28,10 +22,11 @@ public class PlayerControl : MonoBehaviour
         Move();
     }
 
+    // Controls the movement of the player.
     void Move()
     {
         moveX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Jump"))
         {
             Jump();
         }
@@ -47,11 +42,13 @@ public class PlayerControl : MonoBehaviour
         _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
     }
 
+    // Applies force when the player presses the Jump Button.
     void Jump()
     {
         _playerRB.AddForce(Vector2.up * jump);   
     }
-
+    
+    // Inverts the players scale to make it look as if they are moving left and right.
     void FlipPlayer()
     {
         facingRight = !facingRight;
