@@ -9,7 +9,14 @@ public class PlayerControl : MonoBehaviour
     public int jump = 2000;
     private float moveX;
 
+    private TimeTravel _time;
+
     private Rigidbody2D _playerRB;
+
+    private void Start() 
+    {
+    
+    }
 
     private void Awake() 
     {
