@@ -768,7 +768,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inPast: 1
-  layer: 0
 --- !u!4 &1334278635
 Transform:
   m_ObjectHideFlags: 0
@@ -926,4 +925,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jump: 750
-  layer: 0
