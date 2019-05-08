@@ -7,14 +7,14 @@ public class PlayerControl : MonoBehaviour
     public int speed = 10;
     private bool facingRight = false;
     public int jump = 2000;
-    private float moveX;
+    private float moveX;   
 
     private Rigidbody2D _playerRB;
 
     // Retrieves the players rigidbody so that we can move it.
     private void Awake() 
     {
-        _playerRB = GetComponent<Rigidbody2D>();
+        _playerRB = GetComponent<Rigidbody2D>();       
     }
 
     void Update()
@@ -56,4 +56,6 @@ public class PlayerControl : MonoBehaviour
         localScale.x *= -1;
         transform.localScale = localScale;
     }
+
+   
 }
