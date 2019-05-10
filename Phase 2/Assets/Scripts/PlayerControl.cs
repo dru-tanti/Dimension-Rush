@@ -6,6 +6,12 @@ public class PlayerControl : MonoBehaviour
 {
     public int speed = 10;
     private bool facingRight = false;
+
+    private bool grounded = false;
+    public float groundRadius = 0.2f;
+    public Transform groundCheck;
+    public LayerMask whatIsGround;
+    
     public int jump = 2000;
     private float moveX;
 
@@ -19,6 +25,13 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(grounded);
+    }
+
+    private void FixedUpdate() 
+    {
+        // Will check if the character is touching the ground
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
         Move();
     }
 
@@ -26,11 +39,14 @@ public class PlayerControl : MonoBehaviour
     void Move()
     {
         moveX = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        
+        // Checks if the player is already in the air before executing the jump command.
+        if (Input.GetButtonDown("Jump") && grounded)
         {
             Jump();
         }
 
+        // Inverts the player model if they are moving to the left.
         if (moveX < 0f && facingRight == false)
         {
             FlipPlayer();
@@ -39,6 +55,7 @@ public class PlayerControl : MonoBehaviour
             FlipPlayer();
         }
 
+        // Moves the players rigidbody.
         _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
     }
 
