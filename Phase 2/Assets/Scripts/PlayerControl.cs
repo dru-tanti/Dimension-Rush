@@ -11,6 +11,9 @@ public class PlayerControl : MonoBehaviour
     public float groundRadius = 0.2f;
     public Transform groundCheck;
     public LayerMask whatIsGround;
+    private float jumpTimeCounter;
+    public float jumpTime;
+    private bool isJumping;
     
     public int jump = 2000;
     private float moveX;
@@ -25,7 +28,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(grounded);
+        // Debug.Log(grounded);
     }
 
     private void FixedUpdate() 
@@ -38,12 +41,29 @@ public class PlayerControl : MonoBehaviour
     // Controls the movement of the player.
     void Move()
     {
-        moveX = Input.GetAxis("Horizontal");
+        moveX = Input.GetAxisRaw("Horizontal");
         
         // Checks if the player is already in the air before executing the jump command.
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
             Jump();
+        }
+
+        if(Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if(jumpTimeCounter > 0) {
+                Jump();
+                jumpTimeCounter -= Time.deltaTime;
+            } else {
+                isJumping = false;
+            }
+        }
+
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
         }
 
         // Inverts the player model if they are moving to the left.
@@ -62,7 +82,7 @@ public class PlayerControl : MonoBehaviour
     // Applies force when the player presses the Jump Button.
     void Jump()
     {
-        _playerRB.AddForce(Vector2.up * jump);   
+        _playerRB.velocity = Vector2.up * jump;   
     }
     
     // Inverts the players scale to make it look as if they are moving left and right.
