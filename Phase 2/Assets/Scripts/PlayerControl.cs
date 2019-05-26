@@ -6,6 +6,7 @@ public class PlayerControl : MonoBehaviour
 {
     public int speed = 10;
     private bool facingRight = false;
+    public int jump = 10;
 
     private bool grounded = false;
     public float groundRadius = 0.2f;
@@ -15,7 +16,6 @@ public class PlayerControl : MonoBehaviour
     public float jumpTime;
     private bool isJumping;
     
-    public int jump = 2000;
     private float moveX;
 
     private Rigidbody2D _playerRB;
@@ -28,6 +28,7 @@ public class PlayerControl : MonoBehaviour
 
     void Update()
     {
+        Jump();
         // Debug.Log(grounded);
     }
 
@@ -42,29 +43,6 @@ public class PlayerControl : MonoBehaviour
     void Move()
     {
         moveX = Input.GetAxisRaw("Horizontal");
-        
-        // Checks if the player is already in the air before executing the jump command.
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
-        {
-            isJumping = true;
-            jumpTimeCounter = jumpTime;
-            Jump();
-        }
-
-        if(Input.GetKey(KeyCode.Space) && isJumping == true)
-        {
-            if(jumpTimeCounter > 0) {
-                Jump();
-                jumpTimeCounter -= Time.deltaTime;
-            } else {
-                isJumping = false;
-            }
-        }
-
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            isJumping = false;
-        }
 
         // Inverts the player model if they are moving to the left.
         if (moveX < 0f && facingRight == false)
@@ -79,12 +57,6 @@ public class PlayerControl : MonoBehaviour
         _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
     }
 
-    // Applies force when the player presses the Jump Button.
-    void Jump()
-    {
-        _playerRB.velocity = Vector2.up * jump;   
-    }
-    
     // Inverts the players scale to make it look as if they are moving left and right.
     void FlipPlayer()
     {
@@ -92,5 +64,38 @@ public class PlayerControl : MonoBehaviour
         Vector2 localScale  = gameObject.transform.localScale;
         localScale.x *= -1;
         transform.localScale = localScale;
+    }
+
+    void Jump()
+    {
+        // Checks if the player is already in the air before executing the jump command.
+        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        {
+            isJumping = true;
+            jumpTimeCounter = jumpTime;
+
+            // Applies force when the player presses the Jump Button.
+            _playerRB.velocity = Vector2.up * jump;   
+
+        }
+
+        // If the player holds down the spacebar the character will jump higher
+        if(Input.GetKey(KeyCode.Space) && isJumping == true)
+        {
+            if(jumpTimeCounter > 0) {
+
+                // Applies force when the player presses the Jump Button.
+                _playerRB.velocity = Vector2.up * jump;   
+                jumpTimeCounter -= Time.deltaTime;
+            } else {
+                isJumping = false;
+            }
+        }
+
+        // When the space key is released , disable the 
+        if(Input.GetKeyUp(KeyCode.Space))
+        {
+            isJumping = false;
+        }
     }
 }

@@ -10,6 +10,7 @@ public class EnemyPatrol : MonoBehaviour
 
     void Update()
     {
+        // If the raycast does not detect a collider, then it will make the enemy patrol the other way.
         transform.Translate(Vector2.right * speed * Time.deltaTime);
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 2f);
         if(groundInfo.collider == false)
