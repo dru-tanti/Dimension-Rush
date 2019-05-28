@@ -15,6 +15,7 @@ public class PlayerControl : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+    private Animator anim;
     
     private float moveX;
 
@@ -23,6 +24,7 @@ public class PlayerControl : MonoBehaviour
     // Retrieves the players rigidbody so that we can move it.
     private void Awake() 
     {
+        anim = GetComponent<Animator>();
         _playerRB = GetComponent<Rigidbody2D>();
     }
 
@@ -43,6 +45,13 @@ public class PlayerControl : MonoBehaviour
     void Move()
     {
         moveX = Input.GetAxisRaw("Horizontal");
+
+        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        {
+            anim.SetBool("IsRunning", true);
+        } else {
+            anim.SetBool("IsRunning", false);
+        }
 
         // Inverts the player model if they are moving to the left.
         if (moveX < 0f && facingRight == false)
@@ -71,6 +80,7 @@ public class PlayerControl : MonoBehaviour
         // Checks if the player is already in the air before executing the jump command.
         if (Input.GetKeyDown(KeyCode.Space) && grounded)
         {
+            anim.SetTrigger("TakeOff");
             isJumping = true;
             jumpTimeCounter = jumpTime;
 
@@ -79,11 +89,17 @@ public class PlayerControl : MonoBehaviour
 
         }
 
+        if(grounded == true)
+        {
+            anim.SetBool("IsJumping", false);
+        } else {
+            anim.SetBool("IsJumping", true);
+        }
+
         // If the player holds down the spacebar the character will jump higher
         if(Input.GetKey(KeyCode.Space) && isJumping == true)
         {
             if(jumpTimeCounter > 0) {
-
                 // Applies force when the player presses the Jump Button.
                 _playerRB.velocity = Vector2.up * jump;   
                 jumpTimeCounter -= Time.deltaTime;

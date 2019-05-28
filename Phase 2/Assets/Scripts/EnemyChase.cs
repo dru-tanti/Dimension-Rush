@@ -7,6 +7,8 @@ using Pathfinding;
 [RequireComponent (typeof (Seeker))]
 public class EnemyChase : MonoBehaviour
 {
+
+    // TODO: Add platforming Capability
     public Transform target;
     // How many times we will update our path.
     public float updateRate = 2f;
