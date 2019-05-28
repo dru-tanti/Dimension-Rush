@@ -25,7 +25,8 @@ public class TimeTravel : MonoBehaviour
     {
         // Checks if inPast is true or false and determines what layer to cull
         inPast = !inPast;
-        Camera.main.cullingMask = 1 | 1 << (inPast ? 9 : 10);
+        // To add another layer to the culling mask add "| 1 << LayerNumber"
+        Camera.main.cullingMask = 1 | 1 << (inPast ? 9 : 10) | 1 << 8;
 
         // If the player is in the past, disable any colliders in the layer "Present"
         Physics2D.IgnoreLayerCollision(0, 9, !inPast);
