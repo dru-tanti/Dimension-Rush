@@ -7,6 +7,7 @@ using Pathfinding;
 [RequireComponent (typeof (Seeker))]
 public class EnemyChase : MonoBehaviour
 {
+    [Header ("Chase AI Variables")]
 
     // TODO: Add platforming Capability
     public Transform target;
@@ -19,8 +20,17 @@ public class EnemyChase : MonoBehaviour
     // The calculated path
     public Path path;
 
+    [Header ("Enemy Movement Variables")]
     // The speed of the AI
     public float speed = 5f;
+    public float stoppingDistance;
+    public float retreatDistance;
+
+    [Header ("Emeny Attack Variables")]
+    private float timeBtwShots;
+    public float startTimeBtwShots;
+    public GameObject Laser;
+
     public ForceMode2D fMode;
 
     [HideInInspector]
@@ -39,6 +49,7 @@ public class EnemyChase : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         _enemyRigidbody = GetComponent<Rigidbody2D>();
+        timeBtwShots = startTimeBtwShots;
 
         if (target == null)
         {
@@ -90,8 +101,6 @@ public class EnemyChase : MonoBehaviour
             return;
         }
 
-        //TODO: Always look at player.
-
         if(path == null)
             return;
 
@@ -118,6 +127,14 @@ public class EnemyChase : MonoBehaviour
         {
             currentWaypoint++;
             return;
+        }
+
+        if(timeBtwShots <= 0){
+            Instantiate(Laser, transform.position, Quaternion.identity);
+            timeBtwShots = startTimeBtwShots;
+        } else
+        {
+            timeBtwShots -= Time.deltaTime;
         }
     }
 }

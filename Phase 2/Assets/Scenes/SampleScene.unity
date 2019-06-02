@@ -523,7 +523,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.07546234}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -534,7 +534,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 8.38, y: 3.68}
+  m_Size: {x: 8.38, y: 3.5290756}
   m_EdgeRadius: 0
 --- !u!212 &361398771
 SpriteRenderer:
@@ -774,7 +774,7 @@ PolygonCollider2D:
       - {x: 0.38224792, y: -22.498394}
       - {x: 0.8549423, y: -21.377106}
       - {x: 1.1080246, y: -19.062231}
-      - {x: -3.3200684, y: -19.247852}
+      - {x: -3.2553864, y: -19.009655}
 --- !u!212 &385601958
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2766,6 +2766,10 @@ MonoBehaviour:
   target: {fileID: 2078916092}
   updateRate: 2
   speed: 700
+  stoppingDistance: 0
+  retreatDistance: 0
+  startTimeBtwShots: 2
+  Laser: {fileID: 6159597710490871079, guid: 020c49c1d108e86449d1732c4e56d08b, type: 3}
   fMode: 0
   pathIsEnded: 0
   nextWaypointDistance: 3
@@ -2826,14 +2830,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.43203735, y: 9.135596}
-      - {x: -0.638888, y: 9.07197}
+    - - {x: 2.5653, y: 8.88451}
+      - {x: -0.4034958, y: 8.805191}
+      - {x: -0.49765396, y: 8.74242}
+      - {x: -0.59181213, y: 7.86362}
       - {x: -0.557312, y: -1.2514029}
       - {x: 2.388359, y: -1.218864}
       - {x: 2.8945923, y: -1.2431912}
       - {x: 2.8796616, y: -1.4820642}
-      - {x: 2.8416138, y: -5.9070234}
-      - {x: -4.6091537, y: -5.8833475}
+      - {x: 2.8416138, y: -5.655938}
+      - {x: -4.6091537, y: -5.600876}
       - {x: -4.612587, y: -3.84484}
       - {x: -3.7848358, y: -3.8384752}
       - {x: -2.8717117, y: -1.8054309}
@@ -2846,7 +2852,7 @@ PolygonCollider2D:
       - {x: -6.439842, y: -8.602117}
       - {x: 5.980446, y: -8.617184}
       - {x: 6.6845627, y: -7.872035}
-      - {x: 7.038002, y: 9.040109}
+      - {x: 6.7869186, y: 8.789022}
 --- !u!212 &1399222824
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3046,7 +3052,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.64497566, y: -0.77920914}
+  m_Offset: {x: -0.7236612, y: -0.77920914}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3057,7 +3063,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.2100487, y: 3.621582}
+  m_Size: {x: 4.0526776, y: 3.621582}
   m_EdgeRadius: 0
 --- !u!212 &1462612680
 SpriteRenderer:
@@ -3198,12 +3204,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -11.344982, y: 3.9821148}
+    - - {x: -11.326469, y: 3.8710365}
       - {x: -11.455668, y: -4.107744}
-      - {x: 11.535353, y: -4.107744}
-      - {x: 11.441076, y: -0.1597023}
-      - {x: -7.236843, y: -0.07613754}
-      - {x: -7.236397, y: 4.008565}
+      - {x: 10.605444, y: -3.8287716}
+      - {x: 10.604155, y: -0.1597023}
+      - {x: -7.3849487, y: -0.16870308}
+      - {x: -7.421526, y: 3.878973}
 --- !u!212 &1510755574
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4194,15 +4200,20 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -4.7267723, y: -2.3764896}
+    - - {x: -4.530987, y: -1.2954178}
+      - {x: -4.4239902, y: -2.0359955}
+      - {x: -4.2296867, y: -2.3054466}
+      - {x: -3.8456135, y: -2.31139}
       - {x: 3.5933647, y: -2.3764896}
       - {x: 3.6469498, y: -0.68188095}
-      - {x: 4.6735725, y: 1.3634853}
-      - {x: 4.61747, y: 2.4166698}
-      - {x: 2.5692444, y: 2.4264393}
-      - {x: 1.5617714, y: 1.3996754}
+      - {x: 4.1420803, y: 0.770668}
+      - {x: 4.459465, y: 1.2990322}
+      - {x: 4.4696846, y: 1.5443363}
+      - {x: 4.4948196, y: 2.3144608}
+      - {x: 2.5385818, y: 2.3242302}
+      - {x: 1.6844234, y: 1.3076859}
       - {x: -0.5566788, y: 0.29986954}
-      - {x: -4.719654, y: 0.30016708}
+      - {x: -4.413208, y: 0.31719017}
 --- !u!212 &2093412619
 SpriteRenderer:
   m_ObjectHideFlags: 0
