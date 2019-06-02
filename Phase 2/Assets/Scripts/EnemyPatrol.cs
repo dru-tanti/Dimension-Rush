@@ -7,6 +7,7 @@ public class EnemyPatrol : MonoBehaviour
     public float speed;
     private bool movingRight = true;
     public Transform groundDetection;
+    public Transform wallDetection;
 
     void Update()
     {
@@ -24,5 +25,10 @@ public class EnemyPatrol : MonoBehaviour
                 movingRight = true;
             }
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other) 
+    {
+
     }
 }
