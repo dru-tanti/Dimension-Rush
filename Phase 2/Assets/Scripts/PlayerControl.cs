@@ -32,6 +32,16 @@ public class PlayerControl : MonoBehaviour
     {
         Jump();
         // Debug.Log(grounded);
+
+        if(Input.GetKey(KeyCode.P))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+
+        if(Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     private void FixedUpdate() 
@@ -112,6 +122,14 @@ public class PlayerControl : MonoBehaviour
         if(Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider) 
+    {
+        if(collider.tag == "Pit")
+        {
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }

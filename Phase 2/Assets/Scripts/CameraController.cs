@@ -9,6 +9,9 @@ public class CameraController : MonoBehaviour
     public float smoothTimeY;
     public float smoothTimeX;
     public float offset;
+    public bool bounds;
+    public Vector3 minCameraPos;
+    public Vector3 maxCameraPos;
 
     public GameObject Player;
 
@@ -20,9 +23,17 @@ public class CameraController : MonoBehaviour
     void FixedUpdate()
     {
         float posX = Mathf.SmoothDamp(transform.position.x, Player.transform.position.x + offset, ref velocity.x, smoothTimeX);
-        // float posY = Mathf.SmoothDamp(transform.position.y, Player.transform.position.y + offset, ref velocity.y, smoothTimeY);    
+        float posY = Mathf.SmoothDamp(transform.position.y, Player.transform.position.y + offset, ref velocity.y, smoothTimeY);    
 
-        transform.position = new Vector3(posX, 0, transform.position.z);
+        transform.position = new Vector3(posX, posY, transform.position.z);
+
+        if(bounds)
+        {
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x),
+                Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
+                Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
+        }
     }
 }
 
