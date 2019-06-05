@@ -2475,6 +2475,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &588282582
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 588282583}
+  m_Layer: 10
+  m_Name: PickaxeSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &588282583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 588282582}
+  m_LocalRotation: {x: -0, y: -0, z: 0.22264013, w: 0.97490066}
+  m_LocalPosition: {x: -0.3, y: 0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1544270511}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 25.728}
 --- !u!1 &588633600
 GameObject:
   m_ObjectHideFlags: 0
@@ -6250,6 +6280,9 @@ MonoBehaviour:
   speed: 5
   patrolStart: {fileID: 2032817274}
   patrolEnd: {fileID: 442103603}
+  pickaxeSpawn: {fileID: 588282583}
+  pickaxe: {fileID: 445414423548694009, guid: e1da0695e55e7884cad04014c632b509, type: 3}
+  distance: 200
 --- !u!212 &1544270510
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6287,15 +6320,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a08888ecb23c0640a33a4f40238dc30, type: 3}
+  m_Sprite: {fileID: 21300044, guid: 7146c31c817418a42b4b2588ad3340c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8.655556, y: 4.077778}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1544270511
@@ -6308,7 +6341,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 588282583}
   m_Father: {fileID: 1816795800}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6329,8 +6363,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 8.655556, y: 4.077778}
+    newSize: {x: 8.655556, y: 4.077778}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -7377,7 +7411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816795799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.75, y: 15.91, z: -4.2127357}
+  m_LocalPosition: {x: -6.94, y: 12.39, z: -4.2127357}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2032817274}
@@ -7582,7 +7616,7 @@ GameObject:
   - component: {fileID: 1982526081}
   - component: {fileID: 1982526080}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Camera Holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
