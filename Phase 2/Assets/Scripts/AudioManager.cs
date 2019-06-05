@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
 
+    // Defines the AudioManager as a singleton.
     public static AudioManager current { get; private set; }
 
     void Awake()
@@ -20,6 +21,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        // Retrieves the properties of the different sound clips and applies them where appropriate.
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();

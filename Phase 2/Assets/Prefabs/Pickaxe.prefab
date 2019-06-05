@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 445414423548694011}
   - component: {fileID: 445414423548694010}
   - component: {fileID: 445414423548693958}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Pickaxe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,3 +181,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 14
   torque: 7
+  lifetime: 2
