@@ -129,6 +129,7 @@ public class EnemyChase : MonoBehaviour
             return;
         }
 
+        // Fires a laser at the player at set intervals
         if(timeBtwShots <= 0){
             Instantiate(Laser, transform.position, Quaternion.identity);
             timeBtwShots = startTimeBtwShots;

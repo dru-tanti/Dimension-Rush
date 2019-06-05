@@ -1109,7 +1109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 175983903}
   - component: {fileID: 175983904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Robot Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1124,7 +1124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 175983902}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.54, y: 0, z: 0}
+  m_LocalPosition: {x: 0.54, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1723431319}
@@ -6443,6 +6443,7 @@ GameObject:
   - component: {fileID: 1544270509}
   - component: {fileID: 1544270512}
   - component: {fileID: 1544270514}
+  - component: {fileID: 1544270513}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
@@ -6462,13 +6463,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7da77da914321bc4ca9ac0d5de091645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPatrolling: 1
+  isAttacking: 1
   speed: 5
   patrolStart: {fileID: 2032817274}
   patrolEnd: {fileID: 442103603}
   startTimeBtwShots: 1
   pickaxeSpawn: {fileID: 588282583}
   pickaxe: {fileID: 445414423548694009, guid: e1da0695e55e7884cad04014c632b509, type: 3}
-  distance: 7
 --- !u!212 &1544270510
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6542,10 +6544,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.28345704, y: -0.2803135}
+  m_Offset: {x: 2.24, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.24318396, y: 0.5}
@@ -6556,8 +6558,24 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1695704, y: 2.5550041}
+  m_Size: {x: 8, y: 3}
   m_EdgeRadius: 0
+--- !u!58 &1544270513
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544270508}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.14, y: -0.31}
+  serializedVersion: 2
+  m_Radius: 1.39
 --- !u!95 &1544270514
 Animator:
   serializedVersion: 3

@@ -1,0 +1,1002 @@
+fileFormatVersion: 2
+guid: 08a560a8de0d4734faab52487c5eebbc
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Ant Attack_0
+    21300002: Ant Attack_1
+    21300004: Ant Attack_2
+    21300006: Ant Attack_3
+    21300008: Ant Attack_4
+    21300010: Ant Attack_5
+    21300012: Ant Attack_6
+    21300014: Ant Attack_7
+    21300016: Ant Attack_8
+    21300018: Ant Attack_9
+    21300020: Ant Attack_10
+    21300022: Ant Attack_11
+    21300024: Ant Attack_12
+    21300026: Ant Attack_13
+    21300028: Ant Attack_14
+    21300030: Ant Attack_15
+    21300032: Ant Attack_16
+    21300034: Ant Attack_17
+    21300036: Ant Attack_18
+    21300038: Ant Attack_19
+    21300040: Ant Attack_20
+    21300042: Ant Attack_21
+    21300044: Ant Attack_22
+    21300046: Ant Attack_23
+    21300048: Ant Attack_24
+    21300050: Ant Attack_25
+    21300052: Ant Attack_26
+    21300054: Ant Attack_27
+    21300056: Ant Attack_28
+    21300058: Ant Attack_29
+    21300060: Ant Attack_30
+    21300062: Ant Attack_31
+    21300064: Ant Attack_32
+    21300066: Ant Attack_33
+    21300068: Ant Attack_34
+    21300070: Ant Attack_35
+    21300072: Ant Attack_36
+    21300074: Ant Attack6
+    21300076: Ant Attack9
+    21300078: Ant Attack18
+    21300080: Ant Attack22
+    21300082: Ant Attack26
+    21300084: Ant Attack30
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ant Attack_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1765
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6d300806c6195548a277434942a9955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 1765
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ba2531239ad104a9c00f71687f672f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_2
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1765
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fcdebcf0993de45971b7101ac735a8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_3
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 1765
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a1c1e31a9eaba41926760f6df2a48e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_4
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 1765
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2adc11c45e9864a87ee40295898742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_5
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1534
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd05c61a9c5bec4db26dfbeab95491f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_6
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1534
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e55371830381c4c814779c040def2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_7
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 1534
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe619a788942e04f89cfc48579d75d0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_8
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 1534
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbd1c888c5a9b649a1d47644c8fbfa8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1312
+        width: 358
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08d81fd2c79c0a74cb5e6ade274c8496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_10
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1312
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bbf4e51e30d37b44a7dc93da1e06665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_11
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 1312
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8e9a380b2327134c8401260a2402ad4
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_12
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 1312
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4b8555caf196d941b499904b00e37d7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_13
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1118
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48aa4764251793046aef63c55482891c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_14
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1118
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34a10141c89a2b4cbf912679b972560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_15
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 1118
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b319d9871e2322740911bd24c5d8a135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_16
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 1118
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68db5156107732a46993c02d60ce9419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_17
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 1118
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3b88b47a763d494ca7a41067b6c9718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_18
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 933
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e1182221235ec4c8b8721be5cd76d6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_19
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 933
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d43b9384aed2cf4eb61414c9a0884ed
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_20
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 933
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979587246baed2d4ea9cf8791402b004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_21
+      rect:
+        serializedVersion: 2
+        x: 1622
+        y: 933
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4ab38632a4ca524095a93bf9851089f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_22
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 741
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d931da256470c74bbdb6b9eb6183d74
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_23
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 741
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a50c5f382c24643afde8652cd2823d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_24
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 741
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c9e49087a4977e4f930be9dc3ff8b9c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_25
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 741
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21971d5d5288a3c4282e894b80af159d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_26
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 561
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fdbcceeb0d329d4f83f510c444fefb9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_27
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 561
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656a86aab66c6914690210cb1c51928e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_28
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 561
+        width: 360
+        height: 170
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3d26dd7c4590cc4eb0374d01eda6417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_29
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 561
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58a1a40621c80a14a90566b031e3c10c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_30
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 380
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67772abeac7d2074ab3d9336b87c403f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_31
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 380
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc5b126eef134145b63957df31de79d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_32
+      rect:
+        serializedVersion: 2
+        x: 1181
+        y: 380
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81288dde456c5bc469893e69bb7c0bee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_33
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 380
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568fdfad464975e499baf10fc82ccef8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_34
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 184
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a3e951ab89c33943abb46070c24ddb0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_35
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 184
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61e033184fcdb284388733c4ea21ea18
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack_36
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 184
+        width: 360
+        height: 160
+      alignment: 9
+      pivot: {x: 0.25, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756e354ebc4bb704db2df28f7521c0e3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack6
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1534
+        width: 360
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548776c78e5d2dd49ad7321a2bdbe1fd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack9
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1312
+        width: 360
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9fa6f7ecfdc914abbdb8676e48ab9a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack18
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 933
+        width: 360
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8ab76d4d88a9664ea14e44616900b49
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack22
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 740
+        width: 360
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001eb7ca5179f1c43859541577bd831d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack26
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 562
+        width: 360
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd70b7e490442f4587e6681e623806f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ant Attack30
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 380
+        width: 360
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7305ae16be1c6640a3030f9dd0952fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0e0c3900103be1444bcb2c523b74b05a
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
