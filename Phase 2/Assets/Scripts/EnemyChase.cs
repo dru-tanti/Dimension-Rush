@@ -29,6 +29,7 @@ public class EnemyChase : MonoBehaviour
     [Header ("Emeny Attack Variables")]
     private float timeBtwShots;
     public float startTimeBtwShots;
+    public float range;
     public GameObject Laser;
 
     public ForceMode2D fMode;
@@ -50,6 +51,7 @@ public class EnemyChase : MonoBehaviour
         seeker = GetComponent<Seeker>();
         _enemyRigidbody = GetComponent<Rigidbody2D>();
         timeBtwShots = startTimeBtwShots;
+        Physics2D.queriesStartInColliders = false;
 
         if (target == null)
         {
@@ -117,6 +119,21 @@ public class EnemyChase : MonoBehaviour
 
         // Finding direction to the next waypoint.
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, dir, range);
+        if (hitInfo.collider != null)
+        {
+            Debug.Log("Searching");
+            Debug.DrawLine(transform.position, hitInfo.point, Color.red);
+            if(hitInfo.collider.tag == "Player")
+            {
+                Debug.Log("Player Found");
+                Fire();
+            } else {
+                Debug.DrawLine(transform.position, transform.position + dir * range, Color.green);
+            }
+        }
+            
+
         dir *= speed * Time.fixedDeltaTime;
 
         // Move the enemy
@@ -129,6 +146,11 @@ public class EnemyChase : MonoBehaviour
             return;
         }
 
+        
+    }
+
+    private void Fire()
+    {
         // Fires a laser at the player at set intervals
         if(timeBtwShots <= 0){
             Instantiate(Laser, transform.position, Quaternion.identity);

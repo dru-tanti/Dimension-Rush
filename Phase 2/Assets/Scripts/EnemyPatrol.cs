@@ -6,7 +6,6 @@ public class EnemyPatrol : MonoBehaviour
 {
     private bool isAttacking = false;
     [Header ("Enemy Movement Variables")]
-    private bool isplaying;
     public float speed;
     private bool movingRight = true;
     public Transform patrolStart;
@@ -20,7 +19,6 @@ public class EnemyPatrol : MonoBehaviour
     public float startTimeBtwShots;    
     public Transform pickaxeSpawn;
     public GameObject pickaxe;
-    public float distance;
 
     private void Awake() 
     {
@@ -57,6 +55,7 @@ public class EnemyPatrol : MonoBehaviour
         { 
             anim.SetBool("isAttacking", true);
             isAttacking = true;
+            // Sets a delay between the attacks.
             if(timeBtwShots <= 0){
                 timeBtwShots = startTimeBtwShots;
                 Instantiate(pickaxe, pickaxeSpawn.position, Quaternion.identity);
@@ -77,6 +76,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
+    // Moves the game object towards the patrol points
     void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
