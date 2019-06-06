@@ -30,9 +30,9 @@ public class EnemyPatrol : MonoBehaviour
     private void Start() 
     {
         target = new Vector2(patrolEnd.position.x, patrolEnd.position.y);
-        Physics2D.queriesStartInColliders = false;
     }
 
+    // Only moves if it is not attacking
     void Update()
     {
         if(!isAttacking)
@@ -67,6 +67,7 @@ public class EnemyPatrol : MonoBehaviour
         }
     }
 
+    // Resumes movement if the player leaves the field of view.
     void OnTriggerExit2D(Collider2D other) 
     {
         if(other.tag == "Player")

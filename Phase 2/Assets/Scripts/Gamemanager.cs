@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // Defines the AudioManager as a singleton.
+    public static GameManager current { get; private set; }
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        // Check that the instance for GameManager exists, if not set to this class.
+        if (current == null)
+        {
+            current = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            DestroyImmediate(gameObject);
+            return;
+        }
     }
 }

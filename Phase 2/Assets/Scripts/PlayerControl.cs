@@ -127,7 +127,7 @@ public class PlayerControl : MonoBehaviour
             {
                 landDust.Play();
                 AudioManager.current.Play("Landing");
-                CameraShaker.Instance.ShakeOnce(2f, 6f, 0.1f, 1f);
+                CameraShaker.Instance.ShakeOnce(1.3f, 2f, 0.1f, 1f);
                 spawnDust = false;
             }
         }
