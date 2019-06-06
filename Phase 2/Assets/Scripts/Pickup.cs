@@ -23,6 +23,8 @@ public class Pickup : MonoBehaviour
                     // ITEM CAN BE PICKED UP AND ADDED TO INVENTORY
                     inventory.isFull[i] = true;
                     Instantiate(item, inventory.slots[i].transform, false);
+
+                    FindObjectOfType<AudioManager>().Play("Pickup");
                     Destroy(gameObject);
                     break;
                 }
