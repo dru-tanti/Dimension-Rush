@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene("ManuelLevel");
+    }
+
     public void QuitGame ()
     {
         Application.Quit();
