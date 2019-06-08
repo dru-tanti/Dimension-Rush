@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // Defines the GameManager as a singleton.
+    public static GameManager current { get; private set; }
 
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
@@ -56,9 +58,7 @@ public class GameManager : MonoBehaviour
     public void QuitGame ()
     {
         Application.Quit();
-    // Defines the AudioManager as a singleton.
-    public static GameManager current { get; private set; }
-
+    }
     void Awake()
     {
         // Check that the instance for GameManager exists, if not set to this class.
