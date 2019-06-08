@@ -1,13 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using EZCameraShake;
 
 public class PlayerControl : MonoBehaviour
 {
+    [Header("Movement Variables")]
     public int speed = 10;
     private bool facingRight = false;
     public int jump = 10;
 
+    [Header("Jump Variables")]
     private bool grounded = false;
     public float groundRadius = 0.2f;
     public Transform groundCheck;
@@ -15,7 +18,12 @@ public class PlayerControl : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+
+    [Header("Animation Controllers")]
+    public ParticleSystem landDust;
+    private bool spawnDust;
     private Animator anim;
+    private static TimeTravel time;
     
     private float moveX;
 
@@ -24,18 +32,39 @@ public class PlayerControl : MonoBehaviour
     // Retrieves the players rigidbody so that we can move it.
     private void Awake() 
     {
-        anim = GetComponent<Animator>();
+        GameObject GameManager = GameObject.Find("GameManager");
+        time = GameManager.GetComponent<TimeTravel>();
+
+        anim = GetComponent<Animator>();   
+
         _playerRB = GetComponent<Rigidbody2D>();
+        
     }
 
     void Update()
     {
         Jump();
         // Debug.Log(grounded);
+        if(Input.GetKey(KeyCode.P))
+        {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+
+        if(Input.GetKey("escape"))
+        {
+            Application.Quit();
+        }
     }
 
     private void FixedUpdate() 
     {
+        if(time.inPast)
+        {
+            whatIsGround = LayerMask.GetMask("Present");
+        } else {
+            whatIsGround = LayerMask.GetMask("Past");
+        }
+
         // Will check if the character is touching the ground
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
         Move();
@@ -46,7 +75,7 @@ public class PlayerControl : MonoBehaviour
     {
         moveX = Input.GetAxisRaw("Horizontal");
 
-        if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
+        if(moveX < 0f || moveX > 0f)
         {
             anim.SetBool("IsRunning", true);
         } else {
@@ -86,14 +115,21 @@ public class PlayerControl : MonoBehaviour
 
             // Applies force when the player presses the Jump Button.
             _playerRB.velocity = Vector2.up * jump;   
-
         }
 
-        if(grounded == true)
+        if(!grounded)
         {
-            anim.SetBool("IsJumping", false);
-        } else {
             anim.SetBool("IsJumping", true);
+            spawnDust = true;
+        } else {
+            anim.SetBool("IsJumping", false);
+            if(spawnDust == true)
+            {
+                landDust.Play();
+                AudioManager.current.Play("Landing");
+                CameraShaker.Instance.ShakeOnce(2f, 6f, 0.1f, 1f);
+                spawnDust = false;
+            }
         }
 
         // If the player holds down the spacebar the character will jump higher
@@ -108,10 +144,18 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
-        // When the space key is released , disable the 
+        // When the space key is released, disable the 
         if(Input.GetKeyUp(KeyCode.Space))
         {
             isJumping = false;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collider) 
+    {
+        if(collider.tag == "Pit")
+        {
+            Application.LoadLevel(Application.loadedLevel);
         }
     }
 }

@@ -6,9 +6,16 @@ public class CameraController : MonoBehaviour
 {
     private Vector2 velocity;
 
+    [Header ("Camera Smoothing")]
     public float smoothTimeY;
     public float smoothTimeX;
     public float offset;
+    [Tooltip ("Check if you want to define minimum and maximum camera position")]
+    public bool bounds;
+
+    [Header ("Camera Bounds")]
+    public Vector3 minCameraPos;
+    public Vector3 maxCameraPos;
 
     public GameObject Player;
 
@@ -19,10 +26,20 @@ public class CameraController : MonoBehaviour
     
     void FixedUpdate()
     {
+        // Smoothens the camera movement
         float posX = Mathf.SmoothDamp(transform.position.x, Player.transform.position.x + offset, ref velocity.x, smoothTimeX);
-        // float posY = Mathf.SmoothDamp(transform.position.y, Player.transform.position.y + offset, ref velocity.y, smoothTimeY);    
+        float posY = Mathf.SmoothDamp(transform.position.y, Player.transform.position.y + offset, ref velocity.y, smoothTimeY);    
 
-        transform.position = new Vector3(posX, 0, transform.position.z);
+        transform.position = new Vector3(posX, posY, transform.position.z);
+
+        if(bounds)
+        {
+            // Defines the minimum and maximum position the camera can move
+            transform.position = new Vector3(
+                Mathf.Clamp(transform.position.x, minCameraPos.x, maxCameraPos.x),
+                Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
+                Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
+        }
     }
 }
 
