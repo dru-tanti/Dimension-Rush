@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     private Vector2 velocity;
+    public Camera camera;
 
     [Header ("Camera Smoothing")]
     public float smoothTimeY;

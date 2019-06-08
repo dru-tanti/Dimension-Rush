@@ -4,55 +4,79 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
+    private bool isAttacking = false;
     [Header ("Enemy Movement Variables")]
     public float speed;
     private bool movingRight = true;
     public Transform patrolStart;
     public Transform patrolEnd;
     private Vector2 target;
+    private Animator anim;
 
     [Header ("Enemy Attack Variables")]
+    private bool angry;
     private float timeBtwShots;
     public float startTimeBtwShots;    
     public Transform pickaxeSpawn;
     public GameObject pickaxe;
-    public float distance;
 
-
+    private void Awake() 
+    {
+        anim = GetComponent<Animator>();   
+    }
 
     private void Start() 
     {
         target = new Vector2(patrolEnd.position.x, patrolEnd.position.y);
-        Physics2D.queriesStartInColliders = false;
     }
 
+    // Only moves if it is not attacking
     void Update()
     {
-        Move();
-        PlayerSearch();
+        if(!isAttacking)
+        {
+            Move();
+        }
     }
 
-    private IEnumerator ThrowPickaxe()
-    {
-        yield return new WaitForSeconds(2f);
+
+    // Plays the roar when the attack is triggered for the first time.
+    private void OnTriggerEnter2D(Collider2D other) {
+        if(other.tag == "Player" && !angry)
+        {
+            AudioManager.current.Play("AntRoar");
+            angry = true;        
+        }
     }
-
-    void PlayerSearch()
+    
+    private void OnTriggerStay2D(Collider2D other) 
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right, distance);
-            if(hitInfo.collider.CompareTag("Player"))
-            { 
-
-                if(timeBtwShots <= 0){
-                    Instantiate(pickaxe, pickaxeSpawn.position, Quaternion.identity);
-                    timeBtwShots = startTimeBtwShots;
-                } else
-                {
-                    timeBtwShots -= Time.deltaTime;
-                }
+        if(other.tag == "Player")
+        { 
+            anim.SetBool("isAttacking", true);
+            isAttacking = true;
+            // Sets a delay between the attacks.
+            if(timeBtwShots <= 0){
+                timeBtwShots = startTimeBtwShots;
+                Instantiate(pickaxe, pickaxeSpawn.position, Quaternion.identity);
+            } else
+            {
+                timeBtwShots -= Time.deltaTime;
             }
+        }
     }
 
+    // Resumes movement if the player leaves the field of view.
+    void OnTriggerExit2D(Collider2D other) 
+    {
+        if(other.tag == "Player")
+        { 
+            anim.SetBool("isAttacking", false);
+            isAttacking = false;
+        }
+    }
+
+    // Moves the game object towards the patrol points
     void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);

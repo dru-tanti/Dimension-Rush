@@ -25,6 +25,7 @@ public class PlayerControl : MonoBehaviour
     private Animator anim;
     private static TimeTravel time;
     
+    private float lifetime = 1f;
     private float moveX;
 
     private Rigidbody2D _playerRB;
@@ -127,7 +128,7 @@ public class PlayerControl : MonoBehaviour
             {
                 landDust.Play();
                 AudioManager.current.Play("Landing");
-                CameraShaker.Instance.ShakeOnce(2f, 6f, 0.1f, 1f);
+                CameraShaker.Instance.ShakeOnce(1.3f, 2f, 0.1f, 1f);
                 spawnDust = false;
             }
         }
@@ -156,6 +157,15 @@ public class PlayerControl : MonoBehaviour
         if(collider.tag == "Pit")
         {
             Application.LoadLevel(Application.loadedLevel);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.collider.tag == "Projectile")
+        {
+            anim.SetTrigger("Hit");
+            Destroy(gameObject, lifetime);
         }
     }
 }
