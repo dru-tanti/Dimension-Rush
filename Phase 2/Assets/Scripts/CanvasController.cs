@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour
 {
-    // Defines the GameManager as a singleton.
-    public static CanvasController current { get; private set; }
-
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
 
@@ -25,13 +22,14 @@ public class CanvasController : MonoBehaviour
         }
     }
 
-  public void PlayGame ()
+    public void PlayGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void Resume()
     {
+        Debug.Log("Resuming Game");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -46,29 +44,19 @@ public class CanvasController : MonoBehaviour
 
     public void LoadMenu()
     {
+        Debug.Log("Loading Menu");
         SceneManager.LoadScene("MainMenu");
         Time.timeScale = 1f;
     }
 
     public void Restart()
     {
+        Debug.Log("Restarting");
         SceneManager.LoadScene("ManuelLevel");
     }
 
     public void QuitGame ()
     {
         Application.Quit();
-    }
-    void Awake()
-    {
-        // Check that the instance for GameManager exists, if not set to this class.
-        if (current == null)
-        {
-            current = this;
-            DontDestroyOnLoad(gameObject);
-        } else {
-            DestroyImmediate(gameObject);
-            return;
-        }
     }
 }
