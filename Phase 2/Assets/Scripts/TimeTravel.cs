@@ -34,6 +34,19 @@ public class TimeTravel : MonoBehaviour
         {
             SetTimeline();
         }
+
+        if(inPast)
+        {
+            foreach(EnemyChase chase in chaseEnemiesInPast)
+            {
+                chase.gameObject.SetActive(false);
+            }
+        } else {
+            foreach(EnemyChase chase in chaseEnemiesInPast)
+            {
+                chase.gameObject.SetActive(true);
+            }
+        }
     }
 
     private void SetTimeline()
@@ -53,7 +66,7 @@ public class TimeTravel : MonoBehaviour
 
     private IEnumerator DimensionSwitch()
     {
-        while(holdDimension == false)
+        while(true)
         {
             SetTimeline();
             yield return new WaitForSeconds(5f);
