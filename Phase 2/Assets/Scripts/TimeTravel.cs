@@ -11,7 +11,7 @@ public class TimeTravel : MonoBehaviour
 
     //TODO: Find and add rule tiles to the scene
     public bool inPast = true;
-
+    public float switchTime;
     public EnemyChase[] chaseEnemiesInPast;
 
     // Sets the present time line on level start.
@@ -69,7 +69,7 @@ public class TimeTravel : MonoBehaviour
         while(true)
         {
             SetTimeline();
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(switchTime);
         }
     }
 }

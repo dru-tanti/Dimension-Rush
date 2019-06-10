@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
+using UnityEngine.SceneManagement;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -24,8 +25,7 @@ public class PlayerControl : MonoBehaviour
     private bool spawnDust;
     private Animator anim;
     private static TimeTravel time;
-    
-    private float lifetime = 1f;
+    private static CanvasController menu;
     private float moveX;
 
     private Rigidbody2D _playerRB;
@@ -35,6 +35,7 @@ public class PlayerControl : MonoBehaviour
     {
         GameObject GameManager = GameObject.Find("GameManager");
         time = GameManager.GetComponent<TimeTravel>();
+        menu = GetComponent<CanvasController>();
 
         anim = GetComponent<Animator>();   
 
@@ -46,15 +47,6 @@ public class PlayerControl : MonoBehaviour
     {
         Jump();
         // Debug.Log(grounded);
-        if(Input.GetKey(KeyCode.P))
-        {
-            Application.LoadLevel(Application.loadedLevel);
-        }
-
-        if(Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
     }
 
     private void FixedUpdate() 
@@ -156,7 +148,7 @@ public class PlayerControl : MonoBehaviour
     {
         if(collider.tag == "Pit")
         {
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -164,8 +156,14 @@ public class PlayerControl : MonoBehaviour
     {
         if(other.collider.tag == "Projectile")
         {
-            anim.SetTrigger("Hit");
-            Destroy(gameObject, lifetime);
+            StartCoroutine(Die());
         }
+    }
+
+    private IEnumerator Die()
+    {
+        anim.SetTrigger("Hit");
+        yield return new WaitForSeconds(1f);
+        menu.GameOver();
     }
 }

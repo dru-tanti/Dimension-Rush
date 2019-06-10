@@ -7,6 +7,7 @@ public class CanvasController : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject gameOverUI;
 
     void Update() 
     {
@@ -42,6 +43,13 @@ public class CanvasController : MonoBehaviour
         GameIsPaused = true;
     }
 
+    public void GameOver()
+    {
+        gameOverUI.SetActive(true);
+        Time.timeScale = 0f;
+        GameIsPaused = true;
+    }
+
     public void LoadMenu()
     {
         Debug.Log("Loading Menu");
@@ -52,7 +60,9 @@ public class CanvasController : MonoBehaviour
     public void Restart()
     {
         Debug.Log("Restarting");
-        SceneManager.LoadScene("ManuelLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1f;
+        GameIsPaused = false;
     }
 
     public void QuitGame ()

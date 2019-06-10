@@ -1,74 +1,59 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿// using System.Collections;
+// using System.Collections.Generic;
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
-{
-    // Defines the GameManager as a singleton.
-    public static GameManager current { get; private set; }
+// public class GameManager : MonoBehaviour
+// {
+//     // Defines the GameManager as a singleton.
+//     public static GameManager current { get; private set; }
 
-    public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
+//     [Header("Level Settings")]
+//     public int startingLevel = 1;
+//     private int _currentLevel;
+//     public LevelSettings[] settings;
+//     private TimeTravel timeTravel;
+//     private PlayerControl player;
 
-    void Update() 
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            } else
-            {
-                Pause();
-            }
-        }
-    }
+//     void Awake()
+//     {
+//         // Check that the instance for GameManager exists, if not set to this class.
+//         if (current == null)
+//         {
+//             current = this;
+//             DontDestroyOnLoad(gameObject);
+//         } else {
+//             DestroyImmediate(gameObject);
+//             return;
+//         }
 
-  public void PlayGame ()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
+//         player = GetComponent<PlayerControl>();
+//         timeTravel = GetComponent<TimeTravel>();
+//     }
 
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-    }
+//     void Start()
+//     {
+//         if(settings.Length == 0)
+//         {
+//             Debug.Log("No Settings Found!");
+//             enabled = false;
+//             return;
+//         }
+//     }
 
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-    }
+//     public void StartGame()
+//     {
+//         _currentLevel = startingLevel;
+//         if(_currentLevel > settings.Length) _currentLevel = 1;
+//         player.SetSettings(settings[_currentLevel - 1]);
+//         timeTravel.SetSettings(settings[_currentLevel - 1]);
+//     }
 
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-        Time.timeScale = 1f;
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("ManuelLevel");
-    }
-
-    public void QuitGame ()
-    {
-        Application.Quit();
-    }
-    void Awake()
-    {
-        // Check that the instance for GameManager exists, if not set to this class.
-        if (current == null)
-        {
-            current = this;
-            DontDestroyOnLoad(gameObject);
-        } else {
-            DestroyImmediate(gameObject);
-            return;
-        }
-    }
-}
+//     public void NextLevel()
+//     {
+//         _currentLevel++;
+//         if(_currentLevel > settings.Length) _currentLevel = 1;
+//         player.SetSettings(settings[_currentLevel - 1]);
+//         timeTravel.SetSettings(settings[_currentLevel - 1]);
+//     }
+// }
