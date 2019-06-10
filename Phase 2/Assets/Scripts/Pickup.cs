@@ -18,6 +18,7 @@ public class Pickup : MonoBehaviour
         {
             for (int i = 0; i < inventory.slots.Length; i++)
             {
+                
                 if (inventory.isFull[i] == false)
                 {
                     // ITEM CAN BE PICKED UP AND ADDED TO INVENTORY

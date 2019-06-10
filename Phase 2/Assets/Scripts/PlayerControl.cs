@@ -19,13 +19,13 @@ public class PlayerControl : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+    public bool isDead;
 
     [Header("Animation Controllers")]
     public ParticleSystem landDust;
     private bool spawnDust;
     private Animator anim;
     private static TimeTravel time;
-    private static CanvasController menu;
     private float moveX;
 
     private Rigidbody2D _playerRB;
@@ -35,17 +35,19 @@ public class PlayerControl : MonoBehaviour
     {
         GameObject GameManager = GameObject.Find("GameManager");
         time = GameManager.GetComponent<TimeTravel>();
-        menu = GetComponent<CanvasController>();
 
         anim = GetComponent<Animator>();   
 
         _playerRB = GetComponent<Rigidbody2D>();
-        
+        isDead = false;
     }
 
     void Update()
     {
-        Jump();
+        if(!isDead)
+        {
+            Jump();
+        }
         // Debug.Log(grounded);
     }
 
@@ -60,32 +62,10 @@ public class PlayerControl : MonoBehaviour
 
         // Will check if the character is touching the ground
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        Move();
-    }
-
-    // Controls the movement of the player.
-    void Move()
-    {
-        moveX = Input.GetAxisRaw("Horizontal");
-
-        if(moveX < 0f || moveX > 0f)
+        if(!isDead)
         {
-            anim.SetBool("IsRunning", true);
-        } else {
-            anim.SetBool("IsRunning", false);
+            Move();
         }
-
-        // Inverts the player model if they are moving to the left.
-        if (moveX < 0f && facingRight == false)
-        {
-            FlipPlayer();
-        } else if (moveX > 0f && facingRight == true) 
-        {
-            FlipPlayer();
-        }
-
-        // Moves the players rigidbody.
-        _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
     }
 
     // Inverts the players scale to make it look as if they are moving left and right.
@@ -143,12 +123,37 @@ public class PlayerControl : MonoBehaviour
             isJumping = false;
         }
     }
+    
+    // Controls the movement of the player.
+    void Move()
+    {
+        moveX = Input.GetAxisRaw("Horizontal");
 
+        if(moveX < 0f || moveX > 0f)
+        {
+            anim.SetBool("IsRunning", true);
+        } else {
+            anim.SetBool("IsRunning", false);
+        }
+
+        // Inverts the player model if they are moving to the left.
+        if (moveX < 0f && facingRight == false)
+        {
+            FlipPlayer();
+        } else if (moveX > 0f && facingRight == true) 
+        {
+            FlipPlayer();
+        }
+
+        // Moves the players rigidbody.
+        _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
+    }
+    
     private void OnTriggerEnter2D(Collider2D collider) 
     {
         if(collider.tag == "Pit")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            isDead = true;
         }
     }
 
@@ -156,14 +161,8 @@ public class PlayerControl : MonoBehaviour
     {
         if(other.collider.tag == "Projectile")
         {
-            StartCoroutine(Die());
+            isDead = true;
+            anim.SetTrigger("Hit");
         }
-    }
-
-    private IEnumerator Die()
-    {
-        anim.SetTrigger("Hit");
-        yield return new WaitForSeconds(1f);
-        menu.GameOver();
     }
 }

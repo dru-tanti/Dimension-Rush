@@ -1658,7 +1658,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 249426853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 385601956}
@@ -1697,7 +1697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &257595503
 Transform:
   m_ObjectHideFlags: 0
@@ -3181,7 +3181,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
@@ -3198,26 +3197,6 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
---- !u!114 &519420030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe89dfbed5619e5409932cae6956da38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camera: {fileID: 0}
-  smoothTimeY: 0.05
-  smoothTimeX: 0.05
-  offset: 0
-  bounds: 1
-  minCameraPos: {x: -28.9, y: -7.5, z: -15}
-  maxCameraPos: {x: 27.6, y: 7.5, z: -15}
-  Player: {fileID: 2078916089}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -3413,7 +3392,7 @@ MonoBehaviour:
   manualDebugFloorRoof: 0
   showSearchTree: 0
   unwalkableNodeDebugSize: 0.3
-  logPathResults: 1
+  logPathResults: 0
   maxNearestNodeDistance: 100
   scanOnStartup: 1
   fullGetNearestSearch: 0
@@ -4437,6 +4416,22 @@ MonoBehaviour:
     pitchVariance: 0.1
     loop: 0
     source: {fileID: 0}
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 27f633e9d67c6374494d2a88d91b1e59, type: 3}
+    volume: 0.6
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: LevelMusic
+    clip: {fileID: 8300000, guid: 3e2eb7789434cc149aae403d09c0b286, type: 3}
+    volume: 0.6
+    volumeVariance: 0.1
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
   - name: AxeThrow
     clip: {fileID: 8300000, guid: 860ea2de5aac68146b858433b8b33516, type: 3}
     volume: 0.6
@@ -5278,7 +5273,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1753168625}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -6611,7 +6606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inPast: 1
-  switchTime: 5
+  switchTime: 20
   chaseEnemiesInPast: []
 --- !u!4 &1334278635
 Transform:
@@ -7935,8 +7930,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 1753168625}
+        m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9604,7 +9599,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2033603391}
   - component: {fileID: 2033603392}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: ufo_dimension platform_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9850,7 +9845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078916089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.92, y: 16.14, z: -5}
+  m_LocalPosition: {x: 9.92, y: -16.5, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454898692}
@@ -9871,7 +9866,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17327285}
+  m_Offset: {x: -0.06990385, y: -0.27812958}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9882,7 +9877,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.204, y: 2.5323405}
+  m_Size: {x: 0.87777996, y: 2.4624367}
   m_EdgeRadius: 0
 --- !u!50 &2078916094
 Rigidbody2D:
@@ -9924,7 +9919,8 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 1792
-  jumpTime: 0.35
+  jumpTime: 0.5
+  isDead: 0
   landDust: {fileID: 187384456}
 --- !u!114 &2078916097
 MonoBehaviour:

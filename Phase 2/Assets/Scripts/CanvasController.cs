@@ -8,6 +8,14 @@ public class CanvasController : MonoBehaviour
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
+    private PlayerControl player;
+
+
+    private void Awake() {
+        GameObject PlayerControl = GameObject.Find("Player");
+        player = PlayerControl.GetComponent<PlayerControl>();
+
+    }
 
     void Update() 
     {
@@ -20,6 +28,10 @@ public class CanvasController : MonoBehaviour
             {
                 Pause();
             }
+        }
+        if(player.isDead == true)
+        {
+            StartCoroutine(Death());
         }
     }
 
@@ -63,6 +75,12 @@ public class CanvasController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
         GameIsPaused = false;
+    }
+
+    public IEnumerator Death()
+    {
+        yield return new WaitForSeconds(1f);
+        GameOver();
     }
 
     public void QuitGame ()
