@@ -43,8 +43,8 @@ public class CameraController : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.LeftShift))
         {
-            transform.position = new Vector3(0f, 0f, transform.position.z);
-            Camera.main.orthographicSize = 22f;
+            transform.position = new Vector3(-15.5f, 0f, transform.position.z);
+            Camera.main.orthographicSize = 23f;
         } else {
             Camera.main.orthographicSize = 13f;
         }

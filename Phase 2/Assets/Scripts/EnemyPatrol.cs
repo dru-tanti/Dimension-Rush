@@ -38,6 +38,10 @@ public class EnemyPatrol : MonoBehaviour
             Move();
         }
     }
+    void Walk()
+    {
+        AudioManager.current.Play("AntWalk");
+    }
     
     // Moves the game object towards the patrol points
     void Move()
