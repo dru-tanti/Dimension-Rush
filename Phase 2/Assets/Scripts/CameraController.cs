@@ -48,5 +48,14 @@ public class CameraController : MonoBehaviour
         } else {
             Camera.main.orthographicSize = 13f;
         }
+
+        if(Input.GetKey(KeyCode.W))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
+        }
+        if(Input.GetKey(KeyCode.S))
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
+        }
     }
 }

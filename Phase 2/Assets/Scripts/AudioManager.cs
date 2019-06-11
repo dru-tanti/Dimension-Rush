@@ -28,12 +28,21 @@ public class AudioManager : MonoBehaviour
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            //s.source.pitch = s.pitch;
+            s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
 
         level = SceneManager.GetActiveScene().buildIndex;
         SceneMusic(level);
+    }
+    
+    private void Update() {
+        int levelCheck = SceneManager.GetActiveScene().buildIndex;
+        if(levelCheck != level)
+        {
+            level++;
+            SceneMusic(level);
+        }
     }
 
     public void Play(string name)
@@ -48,15 +57,6 @@ public class AudioManager : MonoBehaviour
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
         s.source.Play();
-    }
-
-    private void Update() {
-        int levelCheck = SceneManager.GetActiveScene().buildIndex;
-        if(levelCheck != level)
-        {
-            level++;
-            SceneMusic(level);
-        }
     }
 
     public void Stop(string name)

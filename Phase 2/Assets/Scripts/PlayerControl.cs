@@ -123,6 +123,11 @@ public class PlayerControl : MonoBehaviour
             isJumping = false;
         }
     }
+
+    void Run()
+    {
+        AudioManager.current.Play("Run");
+    }
     
     // Controls the movement of the player.
     void Move()

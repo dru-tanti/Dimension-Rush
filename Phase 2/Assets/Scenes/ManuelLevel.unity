@@ -380,6 +380,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8411590829373425873, guid: 020c49c1d108e86449d1732c4e56d08b,
         type: 3}
+    - target: {fileID: 7799891992447359523, guid: 7835b26cc6842a8438f16058b68ac6c7,
+        type: 3}
+      propertyPath: m_Mass
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7835b26cc6842a8438f16058b68ac6c7, type: 3}
 --- !u!1 &69973572
@@ -1697,7 +1702,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &257595503
 Transform:
   m_ObjectHideFlags: 0
@@ -4370,18 +4375,18 @@ MonoBehaviour:
   sounds:
   - name: Run
     clip: {fileID: 8300000, guid: 4249ba3bd8f48754eb8cd08bd100e795, type: 3}
-    volume: 0.759
-    volumeVariance: 0.1
-    pitch: 0.52
-    pitchVariance: 0.1
-    loop: 1
+    volume: 0.4
+    volumeVariance: 0.15
+    pitch: 0.7
+    pitchVariance: 0.4
+    loop: 0
     source: {fileID: 0}
   - name: Landing
     clip: {fileID: 8300000, guid: 02415f4ba89a2554082c439de5bd9704, type: 3}
-    volume: 0.6
-    volumeVariance: 0.1
-    pitch: 1
-    pitchVariance: 0.1
+    volume: 0.4
+    volumeVariance: 0.2
+    pitch: 0.8
+    pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
   - name: Theme
@@ -4410,10 +4415,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Shift
     clip: {fileID: 8300000, guid: af540aa19160e93489e4d8bc1893d2e8, type: 3}
-    volume: 0.6
-    volumeVariance: 0.1
+    volume: 0.5
+    volumeVariance: 0.2
     pitch: 0.8
-    pitchVariance: 0.1
+    pitchVariance: 0.07
     loop: 0
     source: {fileID: 0}
   - name: MenuMusic
@@ -9492,8 +9497,8 @@ MonoBehaviour:
   smoothTimeX: 0.05
   offset: 0
   bounds: 1
-  minCameraPos: {x: -28.9, y: -7.5, z: -15}
-  maxCameraPos: {x: 27.6, y: 7.5, z: -15}
+  minCameraPos: {x: -31, y: -7.6, z: -15}
+  maxCameraPos: {x: 31, y: 8, z: -15}
   Player: {fileID: 2078916089}
 --- !u!4 &1982526081
 Transform:
@@ -9503,7 +9508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982526079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.97164, y: 7.034652, z: 0.1484375}
+  m_LocalPosition: {x: 31.7, y: -9.4, z: 0.1484375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
