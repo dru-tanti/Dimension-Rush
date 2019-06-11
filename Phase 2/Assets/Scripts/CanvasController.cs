@@ -14,7 +14,6 @@ public class CanvasController : MonoBehaviour
     private void Awake() {
         GameObject PlayerControl = GameObject.Find("Player");
         player = PlayerControl.GetComponent<PlayerControl>();
-
     }
 
     void Update() 

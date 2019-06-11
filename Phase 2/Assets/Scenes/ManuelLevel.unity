@@ -3212,7 +3212,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -3895,11 +3895,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2078916092}
     m_Modifications:
-    - target: {fileID: 6523692549818102229, guid: b89b19a4816ac1b4ab312d86d0b5981a,
-        type: 3}
-      propertyPath: m_Name
-      value: LandingDust
-      objectReference: {fileID: 0}
     - target: {fileID: 4702590089417094283, guid: b89b19a4816ac1b4ab312d86d0b5981a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3954,6 +3949,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6523692549818102229, guid: b89b19a4816ac1b4ab312d86d0b5981a,
+        type: 3}
+      propertyPath: m_Name
+      value: LandingDust
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7927322416824217041, guid: b89b19a4816ac1b4ab312d86d0b5981a, type: 3}
@@ -4389,12 +4389,12 @@ MonoBehaviour:
     pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
-  - name: Theme
-    clip: {fileID: 8300000, guid: 3e2eb7789434cc149aae403d09c0b286, type: 3}
-    volume: 0.6
+  - name: AntWalk
+    clip: {fileID: 8300000, guid: 2e75498306a2af545a31ddfce6d63521, type: 3}
+    volume: 0.4
     volumeVariance: 0.1
-    pitch: 1
-    pitchVariance: 0.1
+    pitch: 0.8
+    pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
   - name: AntRoar
@@ -4431,11 +4431,11 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: LevelMusic
     clip: {fileID: 8300000, guid: 3e2eb7789434cc149aae403d09c0b286, type: 3}
-    volume: 0.6
-    volumeVariance: 0.1
+    volume: 0.35
+    volumeVariance: 0
     pitch: 1
     pitchVariance: 0
-    loop: 0
+    loop: 1
     source: {fileID: 0}
   - name: AxeThrow
     clip: {fileID: 8300000, guid: 860ea2de5aac68146b858433b8b33516, type: 3}
@@ -9508,7 +9508,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1982526079}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.7, y: -9.4, z: 0.1484375}
+  m_LocalPosition: {x: -10.5, y: 0, z: 0.1484375}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 519420032}
