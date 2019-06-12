@@ -3,17 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+[RequireComponent(typeof(PlayerControl))]
 public class CanvasController : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
+    [SerializeField]
     private PlayerControl player;
 
 
     private void Awake() {
-        GameObject PlayerControl = GameObject.Find("Player");
-        player = PlayerControl.GetComponent<PlayerControl>();
+        // GameObject PlayerControl = GameObject.Find("Player");
+        // player = PlayerControl.GetComponent<PlayerControl>();
     }
 
     void Update() 
@@ -37,6 +40,7 @@ public class CanvasController : MonoBehaviour
     public void PlayGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
     }
 
     public void Resume()

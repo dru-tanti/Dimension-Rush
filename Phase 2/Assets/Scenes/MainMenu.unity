@@ -617,7 +617,7 @@ MonoBehaviour:
     volumeVariance: 0.1
     pitch: 0.52
     pitchVariance: 0.1
-    loop: 1
+    loop: 0
     source: {fileID: 0}
   - name: Landing
     clip: {fileID: 8300000, guid: 02415f4ba89a2554082c439de5bd9704, type: 3}
@@ -878,6 +878,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 0}
   gameOverUI: {fileID: 0}
+  player: {fileID: 5486600878269130454, guid: 012cf26b614fc9a4eacc2317fc8f3d07, type: 3}
 --- !u!1 &1721396729
 GameObject:
   m_ObjectHideFlags: 0

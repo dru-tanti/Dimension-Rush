@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
-using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(ParticleSystem))] [RequireComponent(typeof(TimeTravel))]
 public class PlayerControl : MonoBehaviour
 {
     [Header("Movement Variables")]
@@ -53,6 +53,7 @@ public class PlayerControl : MonoBehaviour
 
     private void FixedUpdate() 
     {
+        // Adjusts whatIsGround depending on what layer the player is meant to interact with
         if(time.inPast)
         {
             whatIsGround = LayerMask.GetMask("Present");
@@ -62,6 +63,8 @@ public class PlayerControl : MonoBehaviour
 
         // Will check if the character is touching the ground
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+
+        // Disables movement if the player dies
         if(!isDead)
         {
             Move();
@@ -90,6 +93,7 @@ public class PlayerControl : MonoBehaviour
             _playerRB.velocity = Vector2.up * jump;   
         }
 
+        // Play landing animation and spawn dust when the player becomes grounded again
         if(!grounded)
         {
             anim.SetBool("IsJumping", true);
@@ -124,6 +128,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
+    // Function that is called by the player animation controller.
     void Run()
     {
         AudioManager.current.Play("Run");
@@ -154,14 +159,21 @@ public class PlayerControl : MonoBehaviour
         _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
     }
     
-    private void OnTriggerEnter2D(Collider2D collider) 
+    // Kills the player if they collide with the pit.
+    // private void OnTriggerEnter2D(Collider2D collider) 
+    // {
+    //     if(collider.tag == "Pit")
+    //     {
+    //         isDead = true;
+    //     }
+    // }
+
+    private void OnBecameInvisible() 
     {
-        if(collider.tag == "Pit")
-        {
-            isDead = true;
-        }
+        isDead = true;
     }
 
+    // Plays the death animation and kills the player if they are hit by a projectile
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.collider.tag == "Projectile")

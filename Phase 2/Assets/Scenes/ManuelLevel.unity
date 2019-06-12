@@ -811,7 +811,7 @@ Transform:
   - {fileID: 1366893202}
   - {fileID: 1813484556}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &92641673
 GameObject:
@@ -2316,6 +2316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1f616cbf6154968ad99cec72913d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 2078916097}
   item: {fileID: 602291985590214344, guid: 61cfddbea3ccf491595d8fa219b2a606, type: 3}
 --- !u!212 &388021254
 SpriteRenderer:
@@ -2923,6 +2924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1f616cbf6154968ad99cec72913d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 2078916097}
   item: {fileID: 3687328976157717368, guid: b1bc8bf17269a4b17a7f7a1a8cfd4b61, type: 3}
 --- !u!212 &440446894
 SpriteRenderer:
@@ -3895,6 +3897,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2078916092}
     m_Modifications:
+    - target: {fileID: 6523692549818102229, guid: b89b19a4816ac1b4ab312d86d0b5981a,
+        type: 3}
+      propertyPath: m_Name
+      value: LandingDust
+      objectReference: {fileID: 0}
     - target: {fileID: 4702590089417094283, guid: b89b19a4816ac1b4ab312d86d0b5981a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3949,11 +3956,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6523692549818102229, guid: b89b19a4816ac1b4ab312d86d0b5981a,
-        type: 3}
-      propertyPath: m_Name
-      value: LandingDust
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7927322416824217041, guid: b89b19a4816ac1b4ab312d86d0b5981a, type: 3}
@@ -7855,7 +7857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613037448
 GameObject:
@@ -8440,7 +8442,7 @@ Transform:
   - {fileID: 440446892}
   - {fileID: 388021250}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1747977037 stripped
 Transform:
@@ -8613,7 +8615,7 @@ RectTransform:
   - {fileID: 1578936549}
   - {fileID: 165664056}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8634,6 +8636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 70617838}
   gameOverUI: {fileID: 1578936548}
+  player: {fileID: 2078916095}
 --- !u!1 &1760458655
 GameObject:
   m_ObjectHideFlags: 0
@@ -9223,6 +9226,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c1f616cbf6154968ad99cec72913d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: {fileID: 2078916097}
   item: {fileID: 5849580196802992445, guid: 46c1c63b7bf104bd48f5a02c01d1c49d, type: 3}
 --- !u!212 &1813484560
 SpriteRenderer:
@@ -9513,7 +9517,7 @@ Transform:
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1984375358
 GameObject:
@@ -9856,7 +9860,7 @@ Transform:
   - {fileID: 454898692}
   - {fileID: 187384453}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &2078916093
 BoxCollider2D:

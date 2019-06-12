@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Inventory))]
 public class Pickup : MonoBehaviour
 {
+    [SerializeField]
     private Inventory inventory;
     public GameObject item;
 
     private void Start() 
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        // inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
