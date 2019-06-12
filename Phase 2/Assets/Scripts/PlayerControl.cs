@@ -160,17 +160,12 @@ public class PlayerControl : MonoBehaviour
     }
     
     // Kills the player if they collide with the pit.
-    // private void OnTriggerEnter2D(Collider2D collider) 
-    // {
-    //     if(collider.tag == "Pit")
-    //     {
-    //         isDead = true;
-    //     }
-    // }
-
-    private void OnBecameInvisible() 
+    private void OnTriggerEnter2D(Collider2D collider) 
     {
-        isDead = true;
+        if(collider.tag == "Pit")
+        {
+            isDead = true;
+        }
     }
 
     // Plays the death animation and kills the player if they are hit by a projectile

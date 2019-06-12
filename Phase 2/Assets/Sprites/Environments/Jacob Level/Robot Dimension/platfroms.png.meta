@@ -1,19 +1,17 @@
 fileFormatVersion: 2
-guid: 34a1fd056b4ef42f88f4b52960e7757a
+guid: 58f24b83011f2a24e9ee025de10954d5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Lever-T
-    21300002: Teleporter_Full
-    21300004: Teleporter-T
-    21300006: Lever-M
-    21300008: Lever-D
-    21300010: Teleporter-L
-    21300012: Bottle
-    21300014: thumbnail_7
-    21300016: thumbnail_8
-    21300018: Oil
-    21300020: thumbnail_10
-    21300022: Teleporter-R
+    21300000: platfroms_0
+    21300002: platfroms_1
+    21300004: platfroms_2
+    21300006: platfroms_3
+    21300008: platfroms_4
+    21300010: platfroms_5
+    21300012: platfroms_6
+    21300014: platfroms_7
+    21300016: platfroms_8
+    21300018: platfroms_9
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -57,7 +55,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 18
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,221 +94,201 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lever-T
+      name: platfroms_0
       rect:
         serializedVersion: 2
-        x: 135
-        y: 1656
-        width: 217
-        height: 171
+        x: 36
+        y: 47
+        width: 188
+        height: 843
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0a90062b4f734327b4c4102d05b8a94
+      spriteID: 6abde537214830945875142fd74c4f41
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Teleporter_Full
+      name: platfroms_1
       rect:
         serializedVersion: 2
-        x: 630
-        y: 1182
-        width: 703
-        height: 716
+        x: 1661
+        y: 577
+        width: 294
+        height: 61
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9be7dfca8a7c24ea9a6ae12118088941
+      spriteID: 2de7226a36aeacc4cb5ebfc6ceea25ab
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Teleporter-T
+      name: platfroms_2
       rect:
         serializedVersion: 2
-        x: 1495
-        y: 1402
-        width: 562
-        height: 361
+        x: 2067
+        y: 417
+        width: 495
+        height: 195
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c26cb4886371476faa0fb1d04db1c35
+      spriteID: 469892e30d21b334f9a9a4fd82e35c20
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lever-M
+      name: platfroms_3
       rect:
         serializedVersion: 2
-        x: 146
-        y: 1424
-        width: 217
-        height: 115
+        x: 298
+        y: 47
+        width: 835
+        height: 525
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cfa0f3f22917847d389803ec32176256
+      spriteID: fff2d0c729ab72c4584f331b769cbc4e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lever-D
+      name: platfroms_4
       rect:
         serializedVersion: 2
-        x: 156
-        y: 1163
-        width: 217
-        height: 145
+        x: 1164
+        y: 99
+        width: 357
+        height: 407
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eebe6e1e4cb5b4ec183ba6f8a981b386
+      spriteID: eecfffeebea3f2741b945480b82ea7c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Teleporter-L
+      name: platfroms_5
       rect:
         serializedVersion: 2
-        x: 1566
-        y: 744
-        width: 360
-        height: 539
+        x: 1565
+        y: 472
+        width: 76
+        height: 69
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e791acf0eac7d453aa4cbd0ae64d9917
+      spriteID: c19d1bce146dd844b818fb3acfad484b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bottle
+      name: platfroms_6
       rect:
         serializedVersion: 2
-        x: 179
-        y: 896
-        width: 485
-        height: 183
+        x: 1853
+        y: 397
+        width: 85
+        height: 128
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 473a6393c3e09459abd2b4137f0d7c58
+      spriteID: de6522b13236cf642a0538a6755e616a
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: thumbnail_8
+      name: platfroms_7
       rect:
         serializedVersion: 2
-        x: 923
-        y: 740
-        width: 524
-        height: 319
+        x: 1578
+        y: 365
+        width: 121
+        height: 57
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c1c8e1c9d1d345f680e42ea7f7b723e
+      spriteID: b519a340e8e71574d9692f08ccf6b812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Oil
+      name: platfroms_8
       rect:
         serializedVersion: 2
-        x: 146
-        y: 288
-        width: 354
-        height: 442
+        x: 1840
+        y: 123
+        width: 45
+        height: 120
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e0e3934e2d8434d12afa1d1be71801d8
+      spriteID: cc838736d8ae31643a9baf04bd59f2e3
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: thumbnail_10
+      name: platfroms_9
       rect:
         serializedVersion: 2
-        x: 766
-        y: 233
-        width: 579
-        height: 250
+        x: 2295
+        y: 137
+        width: 186
+        height: 173
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 16d10c522a32d45dea6b7238a7389c9d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Teleporter-R
-      rect:
-        serializedVersion: 2
-        x: 1659
-        y: 139
-        width: 350
-        height: 542
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b9054d93b7344b799c405a2deaab420
+      spriteID: a58067db35c7ca440851b443979ed200
       vertices: []
       indices: 
       edges: []
@@ -318,7 +296,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5807dcd2c8363453b897f1389af2b8ea
+    spriteID: 614b700d8a87ab745944c2399b97696a
     vertices: []
     indices: 
     edges: []

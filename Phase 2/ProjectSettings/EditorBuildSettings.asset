@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2f2e89a6ff4afa24da99de131b246d79
   - enabled: 1
+    path: Assets/Scenes/JacobLevel.unity
+    guid: cef182186d4283b4ab8c88c943991d4f
+  - enabled: 1
     path: Assets/Scenes/ManuelLevel.unity
     guid: 392d09e6e40b7004caaaf10b62b03f90
   m_configObjects: {}

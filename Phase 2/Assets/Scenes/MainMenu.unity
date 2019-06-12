@@ -613,18 +613,18 @@ MonoBehaviour:
   sounds:
   - name: Run
     clip: {fileID: 8300000, guid: 4249ba3bd8f48754eb8cd08bd100e795, type: 3}
-    volume: 0.759
-    volumeVariance: 0.1
-    pitch: 0.52
-    pitchVariance: 0.1
+    volume: 0.4
+    volumeVariance: 0.15
+    pitch: 0.7
+    pitchVariance: 0.4
     loop: 0
     source: {fileID: 0}
   - name: Landing
     clip: {fileID: 8300000, guid: 02415f4ba89a2554082c439de5bd9704, type: 3}
-    volume: 0.6
-    volumeVariance: 0.1
-    pitch: 1
-    pitchVariance: 0.1
+    volume: 0.4
+    volumeVariance: 0.2
+    pitch: 0.8
+    pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
   - name: Theme
@@ -637,10 +637,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: AntRoar
     clip: {fileID: 8300000, guid: ab65d33dea0f7464eb4ed962d408a4ec, type: 3}
-    volume: 0.6
+    volume: 0.4
     volumeVariance: 0.1
-    pitch: 0.7
-    pitchVariance: 0.1
+    pitch: 0.8
+    pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
   - name: Pickup
@@ -653,10 +653,10 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Shift
     clip: {fileID: 8300000, guid: af540aa19160e93489e4d8bc1893d2e8, type: 3}
-    volume: 0.6
-    volumeVariance: 0.1
+    volume: 0.5
+    volumeVariance: 0.2
     pitch: 0.8
-    pitchVariance: 0.1
+    pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
   - name: MenuMusic
@@ -667,7 +667,7 @@ MonoBehaviour:
     pitchVariance: 0
     loop: 0
     source: {fileID: 0}
-  - name: LevelMusic
+  - name: Level3Music
     clip: {fileID: 8300000, guid: 3e2eb7789434cc149aae403d09c0b286, type: 3}
     volume: 0.6
     volumeVariance: 0.1
@@ -681,6 +681,30 @@ MonoBehaviour:
     volumeVariance: 0.1
     pitch: 0.8
     pitchVariance: 0.1
+    loop: 0
+    source: {fileID: 0}
+  - name: Level2Music
+    clip: {fileID: 8300000, guid: 89bea6dbf4299ad40a43e58b1e5befa8, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Level1Music
+    clip: {fileID: 8300000, guid: eddae25c49df267478eab37ac3e11bc0, type: 3}
+    volume: 0.6
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AntWalk
+    clip: {fileID: 8300000, guid: 2e75498306a2af545a31ddfce6d63521, type: 3}
+    volume: 0.4
+    volumeVariance: 0.1
+    pitch: 0.8
+    pitchVariance: 0.2
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1015026568
