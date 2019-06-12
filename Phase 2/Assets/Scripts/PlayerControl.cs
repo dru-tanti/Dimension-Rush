@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
 
+[RequireComponent(typeof(ParticleSystem))] [RequireComponent(typeof(TimeTravel))]
 public class PlayerControl : MonoBehaviour
 {
     [Header("Movement Variables")]
@@ -18,14 +19,13 @@ public class PlayerControl : MonoBehaviour
     private float jumpTimeCounter;
     public float jumpTime;
     private bool isJumping;
+    public bool isDead;
 
     [Header("Animation Controllers")]
     public ParticleSystem landDust;
     private bool spawnDust;
     private Animator anim;
     private static TimeTravel time;
-    
-    private float lifetime = 1f;
     private float moveX;
 
     private Rigidbody2D _playerRB;
@@ -39,26 +39,21 @@ public class PlayerControl : MonoBehaviour
         anim = GetComponent<Animator>();   
 
         _playerRB = GetComponent<Rigidbody2D>();
-        
+        isDead = false;
     }
 
     void Update()
     {
-        Jump();
+        if(!isDead)
+        {
+            Jump();
+        }
         // Debug.Log(grounded);
-        if(Input.GetKey(KeyCode.P))
-        {
-            Application.LoadLevel(Application.loadedLevel);
-        }
-
-        if(Input.GetKey("escape"))
-        {
-            Application.Quit();
-        }
     }
 
     private void FixedUpdate() 
     {
+        // Adjusts whatIsGround depending on what layer the player is meant to interact with
         if(time.inPast)
         {
             whatIsGround = LayerMask.GetMask("Present");
@@ -68,32 +63,12 @@ public class PlayerControl : MonoBehaviour
 
         // Will check if the character is touching the ground
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-        Move();
-    }
 
-    // Controls the movement of the player.
-    void Move()
-    {
-        moveX = Input.GetAxisRaw("Horizontal");
-
-        if(moveX < 0f || moveX > 0f)
+        // Disables movement if the player dies
+        if(!isDead)
         {
-            anim.SetBool("IsRunning", true);
-        } else {
-            anim.SetBool("IsRunning", false);
+            Move();
         }
-
-        // Inverts the player model if they are moving to the left.
-        if (moveX < 0f && facingRight == false)
-        {
-            FlipPlayer();
-        } else if (moveX > 0f && facingRight == true) 
-        {
-            FlipPlayer();
-        }
-
-        // Moves the players rigidbody.
-        _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
     }
 
     // Inverts the players scale to make it look as if they are moving left and right.
@@ -118,6 +93,7 @@ public class PlayerControl : MonoBehaviour
             _playerRB.velocity = Vector2.up * jump;   
         }
 
+        // Play landing animation and spawn dust when the player becomes grounded again
         if(!grounded)
         {
             anim.SetBool("IsJumping", true);
@@ -152,20 +128,58 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collider) 
+    // Function that is called by the player animation controller.
+    void Run()
     {
-        if(collider.tag == "Pit")
+        AudioManager.current.Play("Run");
+    }
+    
+    // Controls the movement of the player.
+    void Move()
+    {
+        moveX = Input.GetAxisRaw("Horizontal");
+
+        if(moveX < 0f || moveX > 0f)
         {
-            Application.LoadLevel(Application.loadedLevel);
+            anim.SetBool("IsRunning", true);
+        } else {
+            anim.SetBool("IsRunning", false);
         }
+
+        // Inverts the player model if they are moving to the left.
+        if (moveX < 0f && facingRight == false)
+        {
+            FlipPlayer();
+        } else if (moveX > 0f && facingRight == true) 
+        {
+            FlipPlayer();
+        }
+
+        // Moves the players rigidbody.
+        _playerRB.velocity = new Vector2 (moveX * speed, _playerRB.velocity.y);
+    }
+    
+    // Kills the player if they collide with the pit.
+    // private void OnTriggerEnter2D(Collider2D collider) 
+    // {
+    //     if(collider.tag == "Pit")
+    //     {
+    //         isDead = true;
+    //     }
+    // }
+
+    private void OnBecameInvisible() 
+    {
+        isDead = true;
     }
 
+    // Plays the death animation and kills the player if they are hit by a projectile
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.collider.tag == "Projectile")
         {
+            isDead = true;
             anim.SetTrigger("Hit");
-            Destroy(gameObject, lifetime);
         }
     }
 }

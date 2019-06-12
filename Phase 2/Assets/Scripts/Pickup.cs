@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Inventory))]
 public class Pickup : MonoBehaviour
 {
+    [SerializeField]
     private Inventory inventory;
     public GameObject item;
 
     private void Start() 
     {
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
+        // inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -18,6 +20,7 @@ public class Pickup : MonoBehaviour
         {
             for (int i = 0; i < inventory.slots.Length; i++)
             {
+                
                 if (inventory.isFull[i] == false)
                 {
                     // ITEM CAN BE PICKED UP AND ADDED TO INVENTORY

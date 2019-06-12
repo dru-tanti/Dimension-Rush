@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: b0cb96f0715c3f34390e29c346361e6c
+guid: 36f01934cb89143e4b03334b8cbd8214
 TextureImporter:
   fileIDToRecycleName:
-    21300000: ufo_dimension assets_8
+    21300000: SilverM
     21300002: ufo_dimension assets_9
-    21300004: ufo_dimension assets_10
-    21300006: ufo_dimension assets_11
-    21300008: ufo_dimension assets_12
-    21300010: ufo_dimension assets_13
+    21300004: OrangeL
+    21300006: OrangeM
+    21300008: OrangeS
+    21300010: SilverS
     21300012: ufo_dimension assets_14
     21300014: ufo_dimension assets_16
     21300016: ufo_dimension assets_17
@@ -93,7 +93,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ufo_dimension assets_8
+      name: SilverM
       rect:
         serializedVersion: 2
         x: 4342
@@ -101,7 +101,7 @@ TextureImporter:
         width: 127
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -121,7 +121,7 @@ TextureImporter:
         width: 126
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,7 +133,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_dimension assets_10
+      name: OrangeL
       rect:
         serializedVersion: 2
         x: 4726
@@ -141,7 +141,7 @@ TextureImporter:
         width: 193
         height: 193
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -153,7 +153,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_dimension assets_11
+      name: OrangeM
       rect:
         serializedVersion: 2
         x: 4952
@@ -161,7 +161,7 @@ TextureImporter:
         width: 112
         height: 110
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -173,7 +173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_dimension assets_12
+      name: OrangeS
       rect:
         serializedVersion: 2
         x: 5096
@@ -181,7 +181,7 @@ TextureImporter:
         width: 70
         height: 70
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -193,7 +193,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ufo_dimension assets_13
+      name: SilverS
       rect:
         serializedVersion: 2
         x: 4372
@@ -201,7 +201,7 @@ TextureImporter:
         width: 67
         height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,7 +221,7 @@ TextureImporter:
         width: 118
         height: 108
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -241,7 +241,7 @@ TextureImporter:
         width: 318
         height: 318
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -261,7 +261,7 @@ TextureImporter:
         width: 455
         height: 455
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

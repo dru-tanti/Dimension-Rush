@@ -5,6 +5,7 @@ using Pathfinding;
 
 [RequireComponent (typeof (Rigidbody2D))]
 [RequireComponent (typeof (Seeker))]
+[RequireComponent (typeof (Transform))]
 public class EnemyChase : MonoBehaviour
 {
     [Header ("Chase AI Variables")]
@@ -46,7 +47,7 @@ public class EnemyChase : MonoBehaviour
     // The waypoint we are currently moving towards.
     private int currentWaypoint;
 
-    void Start() 
+    private void Start() 
     {
         seeker = GetComponent<Seeker>();
         _enemyRigidbody = GetComponent<Rigidbody2D>();
@@ -58,20 +59,24 @@ public class EnemyChase : MonoBehaviour
             Debug.LogError("No Player Found!");
             return;
         }
-
-        /*
-            Start a new path to the target position 
-            and return the result tot he OnPathComplete method
-        */
         seeker.StartPath(transform.position, target.position, OnPathComplete);
 
         StartCoroutine(UpdatePath());
     }
 
+    // void OnEnable() 
+    // {
+    //     /*
+    //         Start a new path to the target position 
+    //         and return the result to the OnPathComplete method
+    //     */
+    //     seeker.StartPath(transform.position, target.position, OnPathComplete);
+
+    //     StartCoroutine(UpdatePath());
+    // }
+
     public void OnPathComplete (Path p)
     {
-        Debug.Log("We Have a Path, did it have an error?" + p.error);
-
         if(!p.error)
         {
             path = p;
@@ -119,10 +124,11 @@ public class EnemyChase : MonoBehaviour
 
         // Finding direction to the next waypoint.
         Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+
+        // Chase Enemy Attack using Dir to get the direction it should aim.
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, dir, range);
         if (hitInfo.collider != null)
         {
-            Debug.Log("Searching");
             Debug.DrawLine(transform.position, hitInfo.point, Color.red);
             if(hitInfo.collider.tag == "Player")
             {

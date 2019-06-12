@@ -8,57 +8,9 @@ public class GameManager : MonoBehaviour
     // Defines the GameManager as a singleton.
     public static GameManager current { get; private set; }
 
-    public static bool GameIsPaused = false;
-    public GameObject pauseMenuUI;
-
-    void Update() 
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (GameIsPaused)
-            {
-                Resume();
-            } else
-            {
-                Pause();
-            }
-        }
-    }
-
-  public void PlayGame ()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-    }
-
-    public void Resume()
-    {
-        pauseMenuUI.SetActive(false);
-        Time.timeScale = 1f;
-        GameIsPaused = false;
-    }
-
-    void Pause()
-    {
-        pauseMenuUI.SetActive(true);
-        Time.timeScale = 0f;
-        GameIsPaused = true;
-    }
-
-    public void LoadMenu()
-    {
-        SceneManager.LoadScene("MainMenu");
-        Time.timeScale = 1f;
-    }
-
-    public void Restart()
-    {
-        SceneManager.LoadScene("ManuelLevel");
-    }
-
-    public void QuitGame ()
-    {
-        Application.Quit();
-    }
+    [Header("Level Settings")]
+    public int startingLevel = 1;
+    private int _currentLevel;
     void Awake()
     {
         // Check that the instance for GameManager exists, if not set to this class.
@@ -70,5 +22,9 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject);
             return;
         }
+
+
     }
+
+
 }

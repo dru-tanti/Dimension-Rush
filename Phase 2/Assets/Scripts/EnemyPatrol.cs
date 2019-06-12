@@ -38,6 +38,37 @@ public class EnemyPatrol : MonoBehaviour
             Move();
         }
     }
+    void Walk()
+    {
+        AudioManager.current.Play("AntWalk");
+    }
+    
+    // Moves the game object towards the patrol points
+    void Move()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
+        if (transform.position.x == target.x && transform.position.y == target.y)
+        {
+            if(movingRight)
+            {
+                target = new Vector2(patrolStart.position.x, patrolStart.position.y);
+                transform.localScale = new Vector3(-1f, 1f, 1f);
+                movingRight = false;
+            } else {
+                target = new Vector2(patrolEnd.position.x, patrolEnd.position.y);
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                movingRight = true;
+            }
+        }
+    }
+    
+    // Controlled by an animation event. Automatically spawns an axe when animation plays
+    private void Throw()
+    {
+        AudioManager.current.Play("AxeThrow");
+        Instantiate(pickaxe, pickaxeSpawn.position, Quaternion.identity);
+    }
+    
 
 
     // Plays the roar when the attack is triggered for the first time.
@@ -55,14 +86,6 @@ public class EnemyPatrol : MonoBehaviour
         { 
             anim.SetBool("isAttacking", true);
             isAttacking = true;
-            // Sets a delay between the attacks.
-            if(timeBtwShots <= 0){
-                timeBtwShots = startTimeBtwShots;
-                Instantiate(pickaxe, pickaxeSpawn.position, Quaternion.identity);
-            } else
-            {
-                timeBtwShots -= Time.deltaTime;
-            }
         }
     }
 
@@ -73,25 +96,6 @@ public class EnemyPatrol : MonoBehaviour
         { 
             anim.SetBool("isAttacking", false);
             isAttacking = false;
-        }
-    }
-
-    // Moves the game object towards the patrol points
-    void Move()
-    {
-        transform.position = Vector2.MoveTowards(transform.position, target, speed * Time.deltaTime);
-        if (transform.position.x == target.x && transform.position.y == target.y)
-        {
-            if(movingRight)
-            {
-                target = new Vector2(patrolStart.position.x, patrolStart.position.y);
-                transform.localScale = new Vector3(-1f, 1f, 1f);
-                movingRight = false;
-            } else {
-                target = new Vector2(patrolEnd.position.x, patrolEnd.position.y);
-                transform.localScale = new Vector3(1f, 1f, 1f);
-                movingRight = true;
-            }
         }
     }
 }
