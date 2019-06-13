@@ -32,6 +32,7 @@ public class TimeTravel : MonoBehaviour
         Debug.Log(timeleft);
     }
 
+    // Shows a countdown timer to the next dimensions change.
     void Countdown()
     {
         timeleft -= Time.deltaTime;
@@ -45,7 +46,7 @@ public class TimeTravel : MonoBehaviour
     void SwitchDimension()
     {
         // Changes the timeline by culling a layer from the camera render.
-        if(Input.GetButtonDown("Fire2"))
+        if(Input.GetKeyDown(KeyCode.K))
         {
             // Checks of the player has any more dimenson shifts before switching dimensions.
             if(dimensionShifts > 0)
@@ -95,6 +96,7 @@ public class TimeTravel : MonoBehaviour
             foreach(EnemyChase chase in chaseEnemiesInPast)
             {
                 chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, -5);
+                Physics2D.IgnoreLayerCollision(10, 9, inPast);
             }
         } else {
             // Moves them back in position and they can start working again.
@@ -113,7 +115,7 @@ public class TimeTravel : MonoBehaviour
         PrintUI();
         StopChasing();
 
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.M))
         {
             Camera.main.cullingMask = 1 | 1 <<  9  | 1 << 10;
         } else {

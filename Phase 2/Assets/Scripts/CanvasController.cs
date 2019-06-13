@@ -13,12 +13,6 @@ public class CanvasController : MonoBehaviour
     [SerializeField]
     private PlayerControl player;
 
-
-    private void Awake() {
-        // GameObject PlayerControl = GameObject.Find("Player");
-        // player = PlayerControl.GetComponent<PlayerControl>();
-    }
-
     void Update() 
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -39,6 +33,11 @@ public class CanvasController : MonoBehaviour
         if(SceneManager.GetActiveScene().buildIndex == 1)
         {
             StartCoroutine(Tutorial());
+        }
+
+        if(SceneManager.GetActiveScene().buildIndex == 5)
+        {
+            StartCoroutine(Credits());
         }
     }
 
@@ -86,14 +85,21 @@ public class CanvasController : MonoBehaviour
 
     public IEnumerator Death()
     {
+        AudioManager.current.Play("Death");
         yield return new WaitForSeconds(1f);
         GameOver();
     }
 
     public IEnumerator Tutorial()
     {
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(20f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public IEnumerator Credits()
+    {
+        yield return new WaitForSeconds(15f);
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame ()

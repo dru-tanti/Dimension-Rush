@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
                 Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
                 Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
         }
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(Input.GetKey(KeyCode.M))
         {
             transform.position = new Vector3(0f, 0f, transform.position.z);
             Camera.main.orthographicSize = 33f;
