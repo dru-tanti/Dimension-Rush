@@ -46,7 +46,7 @@ public class TimeTravel : MonoBehaviour
     void SwitchDimension()
     {
         // Changes the timeline by culling a layer from the camera render.
-        if(Input.GetKeyDown(KeyCode.K))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
             // Checks of the player has any more dimenson shifts before switching dimensions.
             if(dimensionShifts > 0)
@@ -115,7 +115,7 @@ public class TimeTravel : MonoBehaviour
         PrintUI();
         StopChasing();
 
-        if(Input.GetKey(KeyCode.M))
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             Camera.main.cullingMask = 1 | 1 <<  9  | 1 << 10;
         } else {

@@ -83,7 +83,7 @@ public class PlayerControl : MonoBehaviour
     void Jump()
     {
         // Checks if the player is already in the air before executing the jump command.
-        if (Input.GetKeyDown(KeyCode.Space) && grounded)
+        if (Input.GetKeyDown(KeyCode.W) && grounded)
         {
             anim.SetTrigger("TakeOff");
             isJumping = true;
@@ -110,7 +110,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         // If the player holds down the spacebar the character will jump higher
-        if(Input.GetKey(KeyCode.Space) && isJumping == true)
+        if(Input.GetKey(KeyCode.W) && isJumping == true)
         {
             if(jumpTimeCounter > 0) {
                 // Applies force when the player presses the Jump Button.
@@ -122,7 +122,7 @@ public class PlayerControl : MonoBehaviour
         }
 
         // When the space key is released, disable the 
-        if(Input.GetKeyUp(KeyCode.Space))
+        if(Input.GetKeyUp(KeyCode.W))
         {
             isJumping = false;
         }

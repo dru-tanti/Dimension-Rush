@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
                 Mathf.Clamp(transform.position.y, minCameraPos.y, maxCameraPos.y),
                 Mathf.Clamp(transform.position.z, minCameraPos.z, maxCameraPos.z));
         }
-        if(Input.GetKey(KeyCode.M))
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
         {
             transform.position = new Vector3(0f, 0f, transform.position.z);
             Camera.main.orthographicSize = 33f;
@@ -49,10 +49,6 @@ public class CameraController : MonoBehaviour
             Camera.main.orthographicSize = 13f;
         }
 
-        if(Input.GetKey(KeyCode.W))
-        {
-            transform.position = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        }
         if(Input.GetKey(KeyCode.S))
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - 2, transform.position.z);
