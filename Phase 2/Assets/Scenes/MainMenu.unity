@@ -613,14 +613,22 @@ MonoBehaviour:
   sounds:
   - name: Run
     clip: {fileID: 8300000, guid: 4249ba3bd8f48754eb8cd08bd100e795, type: 3}
-    volume: 0.4
+    volume: 0.35
+    volumeVariance: 0.15
+    pitch: 0.7
+    pitchVariance: 0.4
+    loop: 0
+    source: {fileID: 0}
+  - name: Run2
+    clip: {fileID: 8300000, guid: 4de3f649865732c4eb2006eb18bf21fd, type: 3}
+    volume: 0.5
     volumeVariance: 0.15
     pitch: 0.7
     pitchVariance: 0.4
     loop: 0
     source: {fileID: 0}
   - name: Landing
-    clip: {fileID: 8300000, guid: 02415f4ba89a2554082c439de5bd9704, type: 3}
+    clip: {fileID: 8300000, guid: d24aefaaefe86fd44a4f81e0f4a200ae, type: 3}
     volume: 0.4
     volumeVariance: 0.2
     pitch: 0.8
@@ -653,6 +661,14 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Shift
     clip: {fileID: 8300000, guid: af540aa19160e93489e4d8bc1893d2e8, type: 3}
+    volume: 0.4
+    volumeVariance: 0.2
+    pitch: 0.8
+    pitchVariance: 0.2
+    loop: 0
+    source: {fileID: 0}
+  - name: OutofShifts
+    clip: {fileID: 8300000, guid: 57cc9090bf9aff54789e5255e020cfc1, type: 3}
     volume: 0.5
     volumeVariance: 0.2
     pitch: 0.8
@@ -911,7 +927,6 @@ MonoBehaviour:
   pauseMenuUI: {fileID: 0}
   gameOverUI: {fileID: 0}
   player: {fileID: 5486600878269130454, guid: 012cf26b614fc9a4eacc2317fc8f3d07, type: 3}
-  transitionAnim: {fileID: 0}
 --- !u!1 &1721396729
 GameObject:
   m_ObjectHideFlags: 0

@@ -92,7 +92,7 @@ public class CanvasController : MonoBehaviour
 
     public IEnumerator Tutorial()
     {
-        yield return new WaitForSeconds(9f);
+        yield return new WaitForSeconds(12f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
