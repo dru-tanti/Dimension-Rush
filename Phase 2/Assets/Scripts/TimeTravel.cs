@@ -42,11 +42,8 @@ public class TimeTravel : MonoBehaviour
         countdown.SetText(Mathf.CeilToInt(timeleft).ToString());
     }
 
-    public void Update()
+    void SwitchDimension()
     {
-        
-        Countdown();
-
         // Changes the timeline by culling a layer from the camera render.
         if(Input.GetButtonDown("Fire2"))
         {
@@ -60,38 +57,17 @@ public class TimeTravel : MonoBehaviour
                 Debug.Log("No more shifts remaining!");
             }
         }
+    }
 
-        // Swear to god this is the dumbest thing that I've ever seen work.
-        if(inPast)
-        {
-            // Because apparently the AI get's confused if it moves a few units on the Z axis.
-            foreach(EnemyChase chase in chaseEnemiesInPast)
-            {
-                chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, -5);
-            }
-        } else {
-            // Moves them back in position and they can start working again.
-            foreach(EnemyChase chase in chaseEnemiesInPast)
-            {
-                chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, 0);
-            }
-        }
-
-        if(Input.GetKey(KeyCode.LeftShift))
-        {
-            Camera.main.cullingMask = 1 | 1 <<  9  | 1 << 10;
-        } else {
-            // To add another layer to the culling mask add "| 1 << LayerNumber"
-            Camera.main.cullingMask = 1 | 1 << (inPast ? 9 : 10) | 1 << 8;
-        }
-
+    void PrintUI()
+    {
+        // Caps the number of times the player can change dimensions
         if(dimensionShifts > maxShifts)
         {
             dimensionShifts = maxShifts;
         }
 
-        
-
+        // This controls UI to show how many shifts we have remaining
         for (int i = 0; i < battery.Length; i++)
         {
             if(i < dimensionShifts)
@@ -109,6 +85,44 @@ public class TimeTravel : MonoBehaviour
         }
     }
 
+    void StopChasing()
+    {
+        
+        // Swear to god this is the dumbest thing that I've ever seen work.
+        if(inPast)
+        {
+            // Because apparently the AI get's confused if it moves a few units on the Z axis.
+            foreach(EnemyChase chase in chaseEnemiesInPast)
+            {
+                chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, -5);
+            }
+        } else {
+            // Moves them back in position and they can start working again.
+            foreach(EnemyChase chase in chaseEnemiesInPast)
+            {
+                chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, 0);
+            }
+        }
+    }
+    
+    public void Update()
+    {
+        
+        Countdown();
+        SwitchDimension();
+        PrintUI();
+        StopChasing();
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            Camera.main.cullingMask = 1 | 1 <<  9  | 1 << 10;
+        } else {
+            // To add another layer to the culling mask add "| 1 << LayerNumber"
+            Camera.main.cullingMask = 1 | 1 << (inPast ? 9 : 10) | 1 << 8;
+        }
+
+    }
+
     private void SetTimeline()
     {
         // Checks if inPast is true or false and determines what layer to cull
@@ -122,6 +136,7 @@ public class TimeTravel : MonoBehaviour
         CameraShaker.Instance.ShakeOnce(2f, 3f, 0.1f, 1f);
     }
 
+    // Automatically switches dimensions after a certain amount of time.
     private IEnumerator DimensionSwitch()
     {
         while(true)

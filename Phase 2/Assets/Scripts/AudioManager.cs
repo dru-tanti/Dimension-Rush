@@ -93,9 +93,13 @@ public class AudioManager : MonoBehaviour
                 break;
             case 1:
                 AudioManager.current.StopAll();
-                AudioManager.current.Play("Level2Music");
+                AudioManager.current.Play("Level1Music");
                 break;
             case 3:
+                AudioManager.current.StopAll();
+                AudioManager.current.Play("Level2Music");
+                break;
+            case 4:
                 AudioManager.current.StopAll();
                 AudioManager.current.Play("Level3Music");
                 break;

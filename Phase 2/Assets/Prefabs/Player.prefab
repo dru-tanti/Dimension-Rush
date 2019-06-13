@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 5486600878269130451}
   - component: {fileID: 5486600878269130454}
   - component: {fileID: 5486600878269130455}
+  - component: {fileID: 2059168021432352966}
   - component: {fileID: 5486600878269130452}
   m_Layer: 0
   m_Name: Player
@@ -154,6 +155,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1792
   jumpTime: 0.4
+  isDead: 0
   landDust: {fileID: 843418744270291262}
 --- !u!50 &5486600878269130455
 Rigidbody2D:
@@ -176,6 +178,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &2059168021432352966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5486600878269130448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10dcf02f30630441f85bd0e09d33322c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFull: 000000
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  Portal: {fileID: 0}
+  portalSpawn: {fileID: 0}
 --- !u!61 &5486600878269130452
 BoxCollider2D:
   m_ObjectHideFlags: 0

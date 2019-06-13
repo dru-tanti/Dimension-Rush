@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 844630b08c4a62e40a692f86bc69271f
   - enabled: 1
+    path: Assets/Scenes/VivienLevel.unity
+    guid: 550d0934111288c4589005cc31652feb
+  - enabled: 1
     path: Assets/Scenes/JacobLevel.unity
     guid: cef182186d4283b4ab8c88c943991d4f
   - enabled: 1
