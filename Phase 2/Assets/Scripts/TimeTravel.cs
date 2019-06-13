@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using EZCameraShake;
 
 
 public class TimeTravel : MonoBehaviour
 {
-    private bool holdDimension;
-
-    //TODO: Find and add rule tiles to the scene
     public bool inPast = true;
     public float switchTime;
     public EnemyChase[] chaseEnemiesInPast;
     [Tooltip("Set how many shifts the player has in this level")]
     public int dimensionShifts = 10;
+    public int maxShifts = 10;
+    public Image[] battery;
+    public Sprite batteryFull;
+    public Sprite batteryEmpty;
+
     public TextMeshProUGUI countdown;
     public float timeleft;
 
@@ -80,6 +83,29 @@ public class TimeTravel : MonoBehaviour
         } else {
             // To add another layer to the culling mask add "| 1 << LayerNumber"
             Camera.main.cullingMask = 1 | 1 << (inPast ? 9 : 10) | 1 << 8;
+        }
+
+        if(dimensionShifts > maxShifts)
+        {
+            dimensionShifts = maxShifts;
+        }
+
+        
+
+        for (int i = 0; i < battery.Length; i++)
+        {
+            if(i < dimensionShifts)
+        {
+            battery[i].sprite = batteryFull;
+        } else {
+            battery[i].sprite = batteryEmpty;
+        }
+            if (i < maxShifts)
+            {
+                battery[i].enabled = true;
+            } else {
+                battery[i].enabled = false;
+            }
         }
     }
 
