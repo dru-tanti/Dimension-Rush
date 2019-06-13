@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Inventory))]
+//[RequireComponent(typeof(Inventory))]
 public class Pickup : MonoBehaviour
 {
     [SerializeField]
     private Inventory inventory;
     public GameObject item;
-
-    private void Start() 
-    {
-        // inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
-    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,11 +18,12 @@ public class Pickup : MonoBehaviour
                 
                 if (inventory.isFull[i] == false)
                 {
-                    // ITEM CAN BE PICKED UP AND ADDED TO INVENTORY
+                    // Sets inventory slot as true
                     inventory.isFull[i] = true;
+                    // Creates a copy of the item in the UI
                     Instantiate(item, inventory.slots[i].transform, false);
 
-                    FindObjectOfType<AudioManager>().Play("Pickup");
+                    AudioManager.current.Play("Pickup");
                     Destroy(gameObject);
                     break;
                 }

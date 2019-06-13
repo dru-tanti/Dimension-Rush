@@ -35,12 +35,16 @@ public class CanvasController : MonoBehaviour
         {
             StartCoroutine(Death());
         }
+
+        if(SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            StartCoroutine(Tutorial());
+        }
     }
 
     public void PlayGame ()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
     }
 
     public void Resume()
@@ -84,6 +88,12 @@ public class CanvasController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         GameOver();
+    }
+
+    public IEnumerator Tutorial()
+    {
+        yield return new WaitForSeconds(12f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void QuitGame ()

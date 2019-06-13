@@ -40,7 +40,7 @@ public class AudioManager : MonoBehaviour
         int levelCheck = SceneManager.GetActiveScene().buildIndex;
         if(levelCheck != level)
         {
-            level++;
+            level = levelCheck;
             SceneMusic(level);
         }
     }
@@ -57,6 +57,18 @@ public class AudioManager : MonoBehaviour
 		s.source.volume = s.volume * (1f + UnityEngine.Random.Range(-s.volumeVariance / 2f, s.volumeVariance / 2f));
 		s.source.pitch = s.pitch * (1f + UnityEngine.Random.Range(-s.pitchVariance / 2f, s.pitchVariance / 2f));
         s.source.Play();
+    }
+
+    public void StopAll()
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            foreach (Sound s in sounds)
+            {
+                s.source.Stop();
+            }
+        }
+
     }
 
     public void Stop(string name)
@@ -76,13 +88,16 @@ public class AudioManager : MonoBehaviour
         switch(level)
         {
             case 0:
-                Debug.Log("Playing Menu Music");
+                AudioManager.current.StopAll();
                 AudioManager.current.Play("MenuMusic");
                 break;
             case 1:
-                AudioManager.current.Stop("MenuMusic");
-                Debug.Log("Playing Level Music");
-                AudioManager.current.Play("LevelMusic");
+                AudioManager.current.StopAll();
+                AudioManager.current.Play("Level2Music");
+                break;
+            case 3:
+                AudioManager.current.StopAll();
+                AudioManager.current.Play("Level3Music");
                 break;
             default: Debug.Log("No Music Found");
                 break;

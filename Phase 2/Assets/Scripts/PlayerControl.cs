@@ -131,7 +131,14 @@ public class PlayerControl : MonoBehaviour
     // Function that is called by the player animation controller.
     void Run()
     {
-        AudioManager.current.Play("Run");
+        // Adjusts whatIsGround depending on what layer the player is meant to interact with
+        if(time.inPast)
+        {
+            AudioManager.current.Play("Run2");
+        } else {
+            AudioManager.current.Play("Run");
+        }
+        
     }
     
     // Controls the movement of the player.
@@ -160,17 +167,12 @@ public class PlayerControl : MonoBehaviour
     }
     
     // Kills the player if they collide with the pit.
-    // private void OnTriggerEnter2D(Collider2D collider) 
-    // {
-    //     if(collider.tag == "Pit")
-    //     {
-    //         isDead = true;
-    //     }
-    // }
-
-    private void OnBecameInvisible() 
+    private void OnTriggerEnter2D(Collider2D collider) 
     {
-        isDead = true;
+        if(collider.tag == "Pit")
+        {
+            isDead = true;
+        }
     }
 
     // Plays the death animation and kills the player if they are hit by a projectile
