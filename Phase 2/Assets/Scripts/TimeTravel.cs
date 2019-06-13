@@ -13,7 +13,8 @@ public class TimeTravel : MonoBehaviour
     public bool inPast = true;
     public float switchTime;
     public EnemyChase[] chaseEnemiesInPast;
-
+    [Tooltip("Set how many shifts the player has in this level")]
+    public int dimensionShifts = 10;
     // Sets the present time line on level start.
     private void Start() 
     {
@@ -28,19 +29,29 @@ public class TimeTravel : MonoBehaviour
         // Changes the timeline by culling a layer from the camera render.
         if(Input.GetButtonDown("Fire2"))
         {
-            SetTimeline();
+            // Checks of the player has any more dimenson shifts before switching dimensions.
+            if(dimensionShifts > 0)
+            {
+                SetTimeline();
+                dimensionShifts --;
+            } else {
+                Debug.Log("No more shifts remaining!");
+            }
         }
 
+        // Swear to god this is the dumbest thing that I've ever seen work.
         if(inPast)
         {
+            // Because apparently the AI get's confused if it moves a few units on the Z axis.
             foreach(EnemyChase chase in chaseEnemiesInPast)
             {
-                chase.gameObject.SetActive(false);
+                chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, -5);
             }
         } else {
+            // Moves them back in position and they can start working again.
             foreach(EnemyChase chase in chaseEnemiesInPast)
             {
-                chase.gameObject.SetActive(true);
+                chase.transform.position = new Vector3(chase.transform.position.x, chase.transform.position.y, 0);
             }
         }
 
@@ -57,7 +68,7 @@ public class TimeTravel : MonoBehaviour
     {
         // Checks if inPast is true or false and determines what layer to cull
         inPast = !inPast;
-     
+    
         // If the player is in the past, disable any colliders in the layer "Present"
         Physics2D.IgnoreLayerCollision(0, 9, !inPast);
         Physics2D.IgnoreLayerCollision(0, 10, inPast);

@@ -64,17 +64,6 @@ public class EnemyChase : MonoBehaviour
         StartCoroutine(UpdatePath());
     }
 
-    // void OnEnable() 
-    // {
-    //     /*
-    //         Start a new path to the target position 
-    //         and return the result to the OnPathComplete method
-    //     */
-    //     seeker.StartPath(transform.position, target.position, OnPathComplete);
-
-    //     StartCoroutine(UpdatePath());
-    // }
-
     public void OnPathComplete (Path p)
     {
         if(!p.error)

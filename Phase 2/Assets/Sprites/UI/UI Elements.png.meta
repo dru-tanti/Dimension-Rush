@@ -3,6 +3,7 @@ guid: a69f27a2d5cf9ac4683c0909ef2eb41f
 TextureImporter:
   fileIDToRecycleName:
     21300000: Inventory_Box
+    21300002: battery_level
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -93,13 +94,33 @@ TextureImporter:
         width: 97
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: f812e83fe78d745d0b4452d406dd2c95
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: battery_level
+      rect:
+        serializedVersion: 2
+        x: 902
+        y: 246
+        width: 25
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccc3ac60339a8d74a82923ce824080f5
       vertices: []
       indices: 
       edges: []

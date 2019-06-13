@@ -89,17 +89,14 @@ public class AudioManager : MonoBehaviour
         {
             case 0:
                 AudioManager.current.StopAll();
-                Debug.Log("Playing Menu Music");
                 AudioManager.current.Play("MenuMusic");
                 break;
             case 1:
                 AudioManager.current.StopAll();
-                Debug.Log("Playing Level Music");
                 AudioManager.current.Play("Level2Music");
                 break;
-            case 2:
+            case 3:
                 AudioManager.current.StopAll();
-                Debug.Log("Playing Level Music");
                 AudioManager.current.Play("Level3Music");
                 break;
             default: Debug.Log("No Music Found");
