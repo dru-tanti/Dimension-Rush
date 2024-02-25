@@ -7,10 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // Defines the GameManager as a singleton.
     public static GameManager current { get; private set; }
-
-    [Header("Level Settings")]
-    public int startingLevel = 1;
-    private int _currentLevel;
+	public GameState GameState;
+	
     void Awake()
     {
         // Check that the instance for GameManager exists, if not set to this class.
@@ -22,9 +20,5 @@ public class GameManager : MonoBehaviour
             DestroyImmediate(gameObject);
             return;
         }
-
-
     }
-
-
 }

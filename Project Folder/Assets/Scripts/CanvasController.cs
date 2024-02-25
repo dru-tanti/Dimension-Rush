@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public class CanvasController : MonoBehaviour
 {
     public static bool GameIsPaused = false;
+	public GameState GameState;
     public GameObject pauseMenuUI;
     public GameObject gameOverUI;
     [SerializeField]

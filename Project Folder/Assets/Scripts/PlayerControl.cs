@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using EZCameraShake;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(ParticleSystem))] [RequireComponent(typeof(TimeTravel))]
 public class PlayerControl : MonoBehaviour
@@ -27,8 +28,9 @@ public class PlayerControl : MonoBehaviour
     private Animator anim;
     private static TimeTravel time;
     private float moveX;
-
     private Rigidbody2D _playerRB;
+	public UnityAction PlayerDeath;
+	public UnityAction LevelComplete;
 
     // Retrieves the players rigidbody so that we can move it.
     private void Awake() 

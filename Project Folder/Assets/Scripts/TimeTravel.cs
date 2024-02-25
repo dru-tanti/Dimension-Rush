@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using EZCameraShake;
+using UnityEngine.Events;
 
 
 public class TimeTravel : MonoBehaviour
@@ -21,7 +22,8 @@ public class TimeTravel : MonoBehaviour
 
     public TextMeshProUGUI countdown;
     public float timeleft;
-
+	public UnityAction TimelineShift;
+	
     // Sets the present time line on level start.
     private void Start() 
     {
